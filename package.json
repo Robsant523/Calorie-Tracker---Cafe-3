@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "python3 -m http.server 4173",
-    "refresh-menu": "node scripts/refresh-menu.mjs"
+    "refresh-menu": "node scripts/refresh-menu.mjs",
+    "test": "node --test scripts/*.test.mjs"
   }
 }
