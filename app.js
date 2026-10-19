@@ -1,7 +1,8 @@
 let foods=[];
 let state=JSON.parse(localStorage.getItem('calfuel-state')||'{}');
 state.goals={calories:2200,protein:160,carbs:240,fat:70,...(state.goals||{})};state.log||=[];state.planFoods=Object.assign({},state.planFoods||{});state.targetMode||='calories';state.bodyWeight||=170;
-const $=id=>document.getElementById(id),keys=['calories','protein','carbs','fat'],safe=v=>Number(v)||0,persist=()=>localStorage.setItem('calfuel-state',JSON.stringify(state)),meals=['Breakfast','Lunch','Dinner'];
+const $=id=>document.getElementById(id),keys=['calories','protein','carbs','fat'],safe=v=>Number(v)||0,persist=()=>localStorage.setItem('calfuel-state',JSON.stringify(state));
+let meals=[];
 const macroCalories=g=>safe(g.protein)*4+safe(g.carbs)*4+safe(g.fat)*9;
 function recommendedGoals(calories,pounds){const protein=Math.round(pounds*.9),fat=Math.round(calories*.275/9),carbs=Math.max(0,Math.round((calories-protein*4-fat*9)/4));return{calories,protein,carbs,fat}}
 const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLocaleDateString('en-CA')};
@@ -17,8 +18,30 @@ let menuSnapshot;
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hallFoods = () => foods.filter(f => f.hallId === state.hallId);
 const hallName = () => menuSnapshot.diningHalls.find(h => h.id === state.hallId)?.name || 'Dining hall';
-const availableAt = (food, meal) => (food.meals || [food.meal]).some(service =>
-  service === meal || (service === 'Brunch' && ['Breakfast','Lunch'].includes(meal)));
+const availableAt = CalFuelSchedule.availableAt;
+function setupMealSchedule() {
+  const snapshotDate=menuSnapshot.items.find(f=>f.menuDate)?.menuDate || new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(menuSnapshot.refreshedAt));
+  meals=CalFuelSchedule.mealsFor(hallFoods(),snapshotDate);
+  const layout=meals.join('-');
+  state.mealSchedules ||= {};
+  const defaults=meals.includes('Brunch')?{Brunch:50,Dinner:50}:{Breakfast:30,Lunch:40,Dinner:30};
+  const saved=state.mealSchedules[layout] || {};
+  $('schedule').innerHTML=meals.map(meal=>`<label><input type="checkbox" data-meal="${meal}" ${saved[meal]?.enabled===false?'':'checked'}/> ${meal} <input aria-label="${meal} percentage" class="meal-share" data-share="${meal}" type="number" value="${Number.isFinite(saved[meal]?.share)?saved[meal].share:defaults[meal]}" min="0" max="100" step="5"/>%</label>`).join('');
+  $('scheduleNote').textContent=meals.includes('Brunch')?'Brunch replaces breakfast and lunch for this menu. Split your day between brunch and dinner; enabled meals must total 100%.':'Split your day between breakfast, lunch, and dinner; enabled meals must total 100%.';
+  const currentFilter=$('mealFilter').value;
+  $('mealFilter').innerHTML='<option value="all">All meals</option>'+meals.map(m=>`<option>${m}</option>`).join('');
+  $('mealFilter').value=meals.includes(currentFilter)?currentFilter:'all';
+  for(const food of hallFoods()) {
+    const choice=state.planFoods[food.id];
+    if(choice)state.planFoods[food.id]=CalFuelSchedule.migrateChoice(choice,food,meals);
+  }
+  persist();
+  $('schedule').oninput=$('schedule').onchange=()=>{
+    const shares=schedule();
+    state.mealSchedules[layout]=Object.fromEntries(meals.map(m=>[m,{enabled:shares.enabled.includes(m),share:shares.shares[m]}]));
+    persist();generatePlan();
+  };
+}
 function renderHall() {
   $('planTitle').textContent = 'Your ' + hallName() + ' plan';
   $('menuTitle').textContent = 'Browse ' + hallName();
@@ -40,9 +63,9 @@ function setupDiningHalls(menu) {
   $('hallFilter').onchange = () => {
     state.hallId = $('hallFilter').value;
     persist();
-    renderHall(); renderFoods(); renderSelections(); generatePlan();
+    setupMealSchedule(); renderHall(); renderFoods(); renderSelections(); generatePlan();
   };
-  renderHall();
+  setupMealSchedule(); renderHall();
 }
 
 function renderFoods() {
@@ -97,7 +120,7 @@ function renderFoods() {
     $('plan').className='plan empty';$('plan').textContent='Choices updated. Generate a plan to recalculate portions.';
   });
 }
-function renderSelections(){const selected=Object.entries(state.planFoods).map(([id,meal])=>({food:hallFoods().find(f=>f.id===id),meal})).filter(x=>x.food);$('planSelections').innerHTML=selected.length?meals.map(meal=>{const list=selected.filter(x=>x.meal===meal);return list.length?`<div class="selection-meal"><p class="eyebrow">${meal.toUpperCase()}</p>${list.map(({food})=>`<div class="selected-food"><span><b>${food.name}</b><small>${category(food)} · P ${food.protein}g · C ${food.carbs}g · F ${food.fat}g</small></span><button class="remove-selection" data-remove="${food.id}">Remove</button></div>`).join('')}</div>`:''}).join(''):'<p class="muted">Choose dishes below and assign each to breakfast, lunch, or dinner. CalFuel only fills unselected macro categories with a smart fallback.</p>';document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{delete state.planFoods[b.dataset.remove];persist();renderFoods();renderSelections()})}
+function renderSelections(){const selected=Object.entries(state.planFoods).map(([id,meal])=>({food:hallFoods().find(f=>f.id===id),meal})).filter(x=>x.food);$('planSelections').innerHTML=selected.length?meals.map(meal=>{const list=selected.filter(x=>x.meal===meal);return list.length?`<div class="selection-meal"><p class="eyebrow">${meal.toUpperCase()}</p>${list.map(({food})=>`<div class="selected-food"><span><b>${food.name}</b><small>${category(food)} · P ${food.protein}g · C ${food.carbs}g · F ${food.fat}g</small></span><button class="remove-selection" data-remove="${food.id}">Remove</button></div>`).join('')}</div>`:''}).join(''):'<p class="muted">Choose dishes below and assign each to an available meal. CalFuel only fills unselected macro categories with a smart fallback.</p>';document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{delete state.planFoods[b.dataset.remove];persist();renderFoods();renderSelections()})}
 function schedule(){const enabled=[...document.querySelectorAll('[data-meal]:checked')].map(x=>x.dataset.meal),shares=Object.fromEntries([...document.querySelectorAll('[data-share]')].map(x=>[x.dataset.share,safe(x.value)]));return{enabled,shares,sum:enabled.reduce((a,m)=>a+shares[m],0)}}
 const macroCategory={protein:'protein',carbs:'carb',fat:'fat'};function denseFor(macro,pool){return [...pool.filter(f=>safe(f[macro])>0)].sort((a,b)=>(safe(b[macro])/Math.max(1,safe(b.calories)))-(safe(a[macro])/Math.max(1,safe(a.calories))))[0]}function pickFood(macro,meal) {
   const pool=hallFoods().filter(f=>availableAt(f,meal));
