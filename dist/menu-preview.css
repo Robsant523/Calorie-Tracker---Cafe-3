@@ -1,0 +1,9 @@
+.menu-preview{margin:24px 24px 0;padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.menu-preview h2{font:700 22px Fraunces,serif;margin:0 0 8px}
+.menu-preview p{font-size:14px;line-height:1.5;margin:8px 0 0;color:var(--muted)}
+.preview-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.preview-options a{padding:10px 14px;border:1px solid var(--green);border-radius:6px;font-size:14px;text-decoration:none}
+.preview-options a[aria-current=page]{background:var(--green);color:#fff}
+.preview-options a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.menu-preview.is-preview{border:2px solid var(--orange);background:#fff8ee}
+.is-preview h2{color:#8c391d}

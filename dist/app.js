@@ -1,7 +1,23 @@
 let foods=[];
-let state=JSON.parse(localStorage.getItem('calfuel-state')||'{}');
+const previewMode=new URLSearchParams(location.search).get('preview');
+const isPreview=CalFuelPreview.isPreview(previewMode);
+let state=CalFuelPreview.createState(JSON.parse(localStorage.getItem('calfuel-state')||'{}'),previewMode);
 state.goals={calories:2200,protein:160,carbs:240,fat:70,...(state.goals||{})};state.log||=[];state.planFoods=Object.assign({},state.planFoods||{});state.targetMode||='calories';state.bodyWeight||=170;
-const $=id=>document.getElementById(id),keys=['calories','protein','carbs','fat'],safe=v=>Number(v)||0,persist=()=>localStorage.setItem('calfuel-state',JSON.stringify(state));
+const $=id=>document.getElementById(id),keys=['calories','protein','carbs','fat'],safe=v=>Number(v)||0,persist=()=>CalFuelPreview.save(localStorage,state,previewMode);
+function setupPreview() {
+  document.querySelectorAll('[data-preview-mode]').forEach(link=>{
+    const mode=link.dataset.previewMode,url=new URL(location.href);
+    if(mode==='real')url.searchParams.delete('preview');else url.searchParams.set('preview',mode);
+    link.href=url.href;
+    if(mode===(isPreview?previewMode:'real'))link.setAttribute('aria-current','page');
+  });
+  if(!isPreview)return;
+  $('menuPreview').classList.add('is-preview');
+  $('previewTitle').textContent=(previewMode==='weekday'?'Weekday':'Weekend')+' preview — sample data';
+  $('previewNotice').textContent='Try the planner, percentages, and portion entries below. These are fictional menus, not Berkeley offerings. Nothing here changes your real menu, targets, or food log. Preview changes reset when you switch modes or reload. Choose Real menu to return.';
+  $('dailyTotalLabel').textContent='PREVIEW TOTAL · NOT YOUR FOOD LOG';
+  document.querySelector('footer').textContent='Preview only: fictional dishes and estimated nutrition for testing the interface. These are not published Berkeley menus. Return to Real menu for your saved snapshot and food log.';
+}
 let meals=[];
 const macroCalories=g=>safe(g.protein)*4+safe(g.carbs)*4+safe(g.fat)*9;
 function recommendedGoals(calories,pounds){const protein=Math.round(pounds*.9),fat=Math.round(calories*.275/9),carbs=Math.max(0,Math.round((calories-protein*4-fat*9)/4));return{calories,protein,carbs,fat}}
@@ -51,6 +67,10 @@ function renderHall() {
   $('hallStatus').textContent = count
     ? 'Menu and plan choices are limited to ' + hallName() + '. Your daily food log includes all halls.'
     : 'No menu was published for ' + hallName() + ' in this snapshot. Choose another hall or refresh the menu.';
+  if(isPreview){
+    $('menuInfo').textContent=`Sample ${previewMode} menu · ${count} fictional dishes · estimated nutrition`;
+    $('hallStatus').textContent='Sample Café 3 menu for testing only. Your real dining hall, selections, and food log are unchanged.';
+  }
 }
 function setupDiningHalls(menu) {
   menuSnapshot = menu;
@@ -129,5 +149,5 @@ const macroCategory={protein:'protein',carbs:'carb',fat:'fat'};function denseFor
   return chosen?{food:chosen,auto:false}:{food:denseFor(macro,pool.filter(f=>category(f)===macroCategory[macro]))||denseFor(macro,pool),auto:true};
 }
 function generatePlan(){if(!hallFoods().length){$('plan').className='plan empty';$('plan').textContent='No menu available for '+hallName()+' in this snapshot.';return}const s=schedule();if(!s.enabled.length||s.sum!==100){$('plan').className='plan empty';$('plan').textContent=`Choose at least one meal and make enabled meal percentages add to 100% (currently ${s.sum}%).`;return}let all={calories:0,protein:0,carbs:0,fat:0};const cards=s.enabled.map(meal=>{if(!hallFoods().some(f=>availableAt(f,meal)))return '<article class="meal-card"><p class="eyebrow">'+meal+'</p><p>No '+meal.toLowerCase()+' menu published for '+escapeHtml(hallName())+'.</p></article>';const share=s.shares[meal]/100,targets={protein:state.goals.protein*share,carbs:state.goals.carbs*share,fat:state.goals.fat*share},portions=new Map();Object.entries(targets).forEach(([macro,target])=>{const pick=pickFood(macro,meal);if(!pick.food)return;const servings=target/Math.max(1,safe(pick.food[macro])),prior=portions.get(pick.food.id);if(prior){prior.servings=Math.max(prior.servings,servings);prior.macros.push(macro);prior.auto=prior.auto&&pick.auto}else portions.set(pick.food.id,{food:pick.food,servings,macros:[macro],auto:pick.auto})});const rows=[...portions.values()],t=rows.reduce((a,row)=>{keys.forEach(k=>a[k]+=safe(row.food[k])*row.servings);return a},{calories:0,protein:0,carbs:0,fat:0});keys.forEach(k=>all[k]+=t[k]);return `<article class="meal-card"><p class="eyebrow">${meal.toUpperCase()} · ${s.shares[meal]}%</p><h3>${Math.round(t.calories)} kcal plate</h3>${rows.map(({food,servings,macros,auto})=>`<div class="meal-item"><span><b>${food.name}</b><small>${servings.toFixed(2)} servings · <strong>${Math.round(servings*grams(food))}g</strong>${auto?` · <i>auto-picked for ${macros.join(' + ')}</i>`:''}</small></span><span>${Math.round(safe(food.calories)*servings)} kcal</span></div>`).join('')}<p class="numbers">P ${Math.round(t.protein)}g · C ${Math.round(t.carbs)}g · F ${Math.round(t.fat)}g</p></article>`}).join('');$('plan').className='plan';$('plan').innerHTML=cards+`<article class="meal-card"><p class="eyebrow">DAY ESTIMATE</p><h3>${Math.round(all.calories)} kcal</h3><p class="numbers">P ${Math.round(all.protein)}g · C ${Math.round(all.carbs)}g · F ${Math.round(all.fat)}g</p><p class="muted">Each food appears once per meal. Auto-picked foods come only from this dining hall and meal service. Meals without a published menu are excluded from this estimate.</p></article>`}
-async function init(){resetDailyLog();const menu=window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json());foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;$('bodyWeight').value=state.bodyWeight;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('input[name="targetMode"],#calorieGoal,#proteinGoal,#carbGoal,#fatGoal,#bodyWeight').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
+async function init(){setupPreview();resetDailyLog();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;$('bodyWeight').value=state.bodyWeight;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('input[name="targetMode"],#calorieGoal,#proteinGoal,#carbGoal,#fatGoal,#bodyWeight').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
 init().catch(e=>$('menuInfo').textContent=`Could not load the menu: ${e.message}`);

@@ -1,5 +1,11 @@
 # CalFuel — Berkeley dining tracker
 
+## Visual schedule previews
+
+At the top of the local app, use **Weekday preview** for Breakfast/Lunch/Dinner or **Weekend preview** for Brunch/Dinner. These modes use fictional, clearly labeled sample dishes and exercise the normal planner and meal filters. Try changing percentages, choosing foods, generating a plan, or recording a portion. Preview state stays in memory: it cannot overwrite your real targets, selections, schedule preferences, or food log, and it resets on reload or mode change. **Real menu** returns to your saved snapshot and data. You can also open `?preview=weekday` or `?preview=weekend` directly. Run `npm test` to verify sample services and storage isolation.
+
+## About the app
+
 A small, no-build calorie and macro tracker for UC Berkeley students. Choose Café 3, Clark Kerr, Crossroads, or Foothill with the **Where are you eating?** selector. Menu cards, saved plan selections, and automatic plan choices are limited to that hall. Daily consumption totals still include food logged from every hall.
 
 The chosen hall and meal selections are saved on the current device. Weekend menus use **Brunch and Dinner** (50% / 50% by default); weekday menus use Breakfast, Lunch, and Dinner (30% / 40% / 30%). The planner follows the menu's serving date and service labels, so a brunch dish is never duplicated into breakfast and lunch. Existing breakfast/lunch choices for brunch dishes migrate to Brunch. Meal percentages remain adjustable in steps of 5 and are saved separately for each schedule. A hall or meal without published dishes shows an empty state; it never borrows food from another hall. The page displays the snapshot refresh date; menus and nutrition are not live guarantees.
