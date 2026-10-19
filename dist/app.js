@@ -5,6 +5,7 @@ let state=CalFuelPreview.createState(JSON.parse(localStorage.getItem('calfuel-st
 state.goals={calories:2200,protein:160,carbs:240,fat:70,...(state.goals||{})};state.log||=[];state.planFoods=Object.assign({},state.planFoods||{});state.targetMode||='calories';state.bodyWeight||=170;
 const $=id=>document.getElementById(id),keys=['calories','protein','carbs','fat'],safe=v=>Number(v)||0,persist=()=>CalFuelPreview.save(localStorage,state,previewMode);
 function setupPreview() {
+  $('menuPreview').hidden=!isPreview;
   document.querySelectorAll('[data-preview-mode]').forEach(link=>{
     const mode=link.dataset.previewMode,url=new URL(location.href);
     if(mode==='real')url.searchParams.delete('preview');else url.searchParams.set('preview',mode);

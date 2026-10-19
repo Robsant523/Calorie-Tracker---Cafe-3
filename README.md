@@ -2,7 +2,7 @@
 
 ## Visual schedule previews
 
-At the top of the local app, use **Weekday preview** for Breakfast/Lunch/Dinner or **Weekend preview** for Brunch/Dinner. These modes use fictional, clearly labeled sample dishes and exercise the normal planner and meal filters. Try changing percentages, choosing foods, generating a plan, or recording a portion. Preview state stays in memory: it cannot overwrite your real targets, selections, schedule preferences, or food log, and it resets on reload or mode change. **Real menu** returns to your saved snapshot and data. You can also open `?preview=weekday` or `?preview=weekend` directly. Run `npm test` to verify sample services and storage isolation.
+Test controls are hidden during ordinary use, including before JavaScript loads. To test, open `http://localhost:4173/?preview=weekday` for Breakfast/Lunch/Dinner or `http://localhost:4173/?preview=weekend` for Brunch/Dinner (use the same query parameters on any app URL). The preview controls appear only for these two modes. These modes use fictional, clearly labeled sample dishes and exercise the normal planner and meal filters. Try changing percentages, choosing foods, generating a plan, or recording a portion. Preview state stays in memory: it cannot overwrite your real targets, selections, schedule preferences, or food log, and it resets on reload or mode change. **Real menu** returns to your saved snapshot and data and hides the test controls again. This is a UI convenience, not an access restriction; anyone with a preview link can use sample mode. Run `npm test` to verify preview visibility, sample services, and storage isolation.
 
 ## About the app
 
