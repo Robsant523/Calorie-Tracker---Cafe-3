@@ -8,8 +8,8 @@ const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLoc
 function resetDailyLog(){const today=logDay(Date.now());if(state.logDay&&state.logDay!==today)state.log=[];state.logDay=today;persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();if(foods.length)renderDashboard()},next-now)}
 const category=f=>{const n=f.name.toLowerCase();if(/cookie|cake|dessert|soft serve|ice cream|pudding|brownie|pie/.test(n))return'dessert';if(/avocado|nut|almond|peanut|cashew|seed|olive|guacamole|tahini|oil|butter/.test(n))return'fat';if(/chicken|beef|salmon|turkey|tuna|tofu|bean|lentil|dal|egg|yogurt|brisket|tempeh/.test(n))return'protein';if(/rice|pasta|noodle|potato|bread|waffle|bagel|roll|oatmeal|fries|samosa|cereal/.test(n))return'carb';return'vegetable'};
 const grams=f=>({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120);
-const totals=()=>state.log.reduce((a,entry)=>{const id=typeof entry==='string'?entry:entry.id,f=foods.find(x=>x.id===id);if(f)keys.forEach(k=>a[k]+=safe(f[k]));return a},{calories:0,protein:0,carbs:0,fat:0});
-function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=t.calories;$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.max(g.calories-t.calories,0)} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${t[k]}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`).join('')}
+const totals=()=>CalFuelPortions.total(state.log,foods);
+function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=Math.round(t.calories);$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.round(Math.max(g.calories-t.calories,0))} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${Number(t[k].toFixed(1))}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`).join('')}
 function renderTargetForm(){const g=state.goals,mode=state.targetMode,calories=mode==='calories'?safe($('calorieGoal').value)||g.calories:macroCalories({protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat});const weight=safe($('bodyWeight').value)||state.bodyWeight,recommended=recommendedGoals(calories,weight),shown=mode==='calories'?recommended:{protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat};$('calorieGoal').disabled=mode==='macros';['proteinGoal','carbGoal','fatGoal'].forEach(id=>$(id).disabled=mode==='calories');$('bodyWeightRow').hidden=mode==='macros';$('calorieGoal').value=calories;$('proteinGoal').value=shown.protein;$('carbGoal').value=shown.carbs;$('fatGoal').value=shown.fat;const total=macroCalories(shown),difference=calories-total;$('macroBreakdown').innerHTML=`<b>How your macros become calories</b><span>Protein ${shown.protein}g × 4 = ${shown.protein*4} kcal</span><span>Carbs ${shown.carbs}g × 4 = ${shown.carbs*4} kcal</span><span>Fat ${shown.fat}g × 9 = ${shown.fat*9} kcal</span><strong>Macro total: ${total} kcal${mode==='calories'?` · Difference: ${difference>0?'+':''}${difference} kcal`:''}</strong>`;if(mode==='calories')$('targetGuidance').textContent=`Suggested from ${weight} lb: protein uses the midpoint of 0.8–1.0 g/lb; fat uses the midpoint of the 20–35% calorie range; carbs use the calories left after protein and fat.`;else $('targetGuidance').textContent='Your calorie target is calculated from your macros: protein and carbs are 4 kcal/g; fat is 9 kcal/g.'}
 function saveGoals(){const mode=document.querySelector('input[name="targetMode"]:checked').value;state.targetMode=mode;if(mode==='calories'){const calories=safe($('calorieGoal').value),weight=safe($('bodyWeight').value);state.bodyWeight=weight;state.goals=recommendedGoals(calories,weight)}else{state.goals={calories:macroCalories({protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}),protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}}persist();renderTargetForm();renderDashboard();generatePlan()}
 
@@ -60,11 +60,35 @@ function renderFoods() {
           <option value="">Add to plan…</option>
           ${meals.map(m=>`<option value="${m}" ${chosen===m?'selected':''} ${availableAt(f,m)?'':'disabled'}>${m}${availableAt(f,m)?'':' (not offered)'}</option>`).join('')}
         </select>
-      </div><button class="add" data-add="${escapeHtml(f.id)}">Add to log</button></div>
+      </div></div>
+      <form class="portion-form" data-portion="${escapeHtml(f.id)}">
+        <label for="portion-${escapeHtml(f.id)}">Portion eaten (grams)</label>
+        <div class="portion-input-row"><input id="portion-${escapeHtml(f.id)}" name="weight" type="number" min="0.1" step="any" inputmode="decimal" required placeholder="e.g. 150" aria-label="Grams eaten of ${escapeHtml(f.name)}"/>
+        <button type="submit">Record portion</button></div>
+        <p class="portion-feedback" role="status" aria-live="polite">Enter your portion weight to preview its estimated macros.</p>
+      </form>
     </article>`;
   }).join('') || '<p class="menu-empty" role="status">No dishes match this hall and these filters. Try another meal, category, or dining hall.</p>';
-  document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{
-    state.log.push({id:b.dataset.add,at:Date.now()});persist();renderDashboard();
+  document.querySelectorAll('[data-portion]').forEach(form=>{
+    const food=foods.find(f=>f.id===form.dataset.portion),input=form.elements.weight,feedback=form.querySelector('.portion-feedback');
+    input.oninput=()=>{
+      try {
+        const n=CalFuelPortions.calculate(food,input.value,grams(food));
+        feedback.textContent=`${input.value}g ≈ ${Math.round(n.calories)} kcal · P ${Number(n.protein.toFixed(1))}g · C ${Number(n.carbs.toFixed(1))}g · F ${Number(n.fat.toFixed(1))}g`;
+      } catch { feedback.textContent='Enter a portion weight greater than 0 grams.'; }
+    };
+    form.onsubmit=event=>{
+      event.preventDefault();
+      try {
+        const nutrition=CalFuelPortions.calculate(food,input.value,grams(food));
+        const weightGrams=Number(input.value);
+        // Catch an overnight sleeping tab before recording today's portion.
+        if(state.logDay!==logDay(Date.now())){state.log=[];state.logDay=logDay(Date.now());}
+        state.log.push({id:food.id,name:food.name,hallId:food.hallId,weightGrams,servingGrams:grams(food),nutrition,at:Date.now()});
+        persist();renderDashboard();input.value='';
+        feedback.textContent=`Recorded ${weightGrams}g of ${food.name} · ${Math.round(nutrition.calories)} kcal.`;
+      } catch(error) { feedback.textContent=error.message; }
+    };
   });
   document.querySelectorAll('[data-plan-meal]').forEach(s=>s.onchange=()=>{
     const id=s.dataset.planMeal;

@@ -4,6 +4,8 @@ A small, no-build calorie and macro tracker for UC Berkeley students. Choose Caf
 
 The chosen hall and meal selections are saved on the current device. Breakfast and lunch can use items from a published brunch service. A hall or meal without published dishes shows an empty state; it never borrows food from another hall. The page displays the snapshot refresh date; menus and nutrition are not live guarantees.
 
+To track food eaten, enter its portion weight in grams on the menu card. The card previews calories and macros for that weight; **Record portion** saves it to the day's consumed totals. For example, 60g of a food whose estimated 120g serving has 250 kcal counts as 125 kcal. Nutrition and reference serving weights are estimates. Recorded portions preserve their calculated nutrition across menu refreshes, and previous one-serving records remain supported.
+
 ## Use it
 
 ```bash
