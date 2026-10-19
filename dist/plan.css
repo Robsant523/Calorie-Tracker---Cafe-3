@@ -1,1 +1,13 @@
 .plan-selections{background:#f3f6ec;border:1px solid #dce3d3;border-radius:12px;padding:16px 18px;margin-bottom:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.selection-meal{min-width:0}.selected-food{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid #dce3d3;font-size:13px}.selected-food small{display:block;color:var(--muted);margin-top:3px}.remove-selection{margin:0;background:transparent;border:1px solid var(--line);padding:5px 7px;font-size:10px}.plan-picker{display:flex;align-items:center;gap:7px;margin-top:14px;padding-right:90px}.plan-picker select{width:100%;border:1px solid var(--line);background:#fff;border-radius:6px;padding:8px;font:12px 'DM Sans'}.picked{font:10px 'DM Mono';white-space:nowrap;color:var(--green);font-weight:bold}.meal-item i{font-style:normal;color:var(--green)}@media(max-width:720px){.plan-selections{grid-template-columns:1fr}}
+.day-plan-options{padding:18px;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:20px}
+.day-plan-options>label{display:block;font-weight:700;margin-bottom:10px}
+.day-plan-options select{max-width:100%;padding:12px;border:1px solid var(--green);border-radius:6px;background:white;font:14px 'DM Sans',sans-serif;color:var(--ink)}
+.day-plan-options summary{cursor:pointer;font-size:13px;font-weight:600}
+.day-summary{grid-column:1/-1;border:1px solid var(--green);border-radius:12px;background:#f3f6ec;padding:22px}
+.day-summary h3{font:700 28px Fraunces,serif;margin:8px 0}.day-summary>p{font-size:14px}
+.plan-comparison{overflow-x:auto}.plan-comparison table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}
+.plan-comparison caption{text-align:left;margin:12px 0;color:var(--muted)}
+.plan-comparison th,.plan-comparison td{padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.plan-comparison th:first-child,.plan-comparison td:first-child{padding-left:0}
+.plan-warnings{padding-left:20px;color:#853a21;font-size:13px;line-height:1.5}.plan-warnings li+li{margin-top:8px}
+#generatePlan{margin:0;flex-shrink:0}.meal-item strong{font-size:18px;color:var(--green)}
