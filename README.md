@@ -12,6 +12,10 @@ Portions fit calories and all three macros together, with a minimum quarter serv
 
 ## About the app
 
+### Manual foods
+
+Use **Enter food manually** below the daily totals for snacks, restaurant meals, or other foods outside the menu. Enter nutrition for the portion actually eaten: a name, protein, carbs, and fat in grams. Calories are optional; blank calories use protein × 4 + carbs × 4 + fat × 9, while an entered value uses the label calories as-is. **Record food eaten** adds to consumed totals without changing your targets or meal plan. Manual entries persist on this device, survive menu refreshes, and reset with the food log at 5 AM. Remove an incorrect entry from **Today’s manual entries**. Preview-mode entries remain isolated from real records.
+
 A small, no-build calorie and macro tracker for UC Berkeley students. Choose Café 3, Clark Kerr, Crossroads, or Foothill with the **Where are you eating?** selector. Menu cards, saved plan selections, and automatic plan choices are limited to that hall. Daily consumption totals still include food logged from every hall.
 
 The chosen hall and meal selections are saved on the current device. Weekend menus use **Brunch and Dinner** (50% / 50% by default); weekday menus use Breakfast, Lunch, and Dinner (30% / 40% / 30%). The planner follows the menu's serving date and service labels, so a brunch dish is never duplicated into breakfast and lunch. Existing breakfast/lunch choices for brunch dishes migrate to Brunch. Meal percentages remain adjustable in steps of 5 and are saved separately for each schedule. A hall or meal without published dishes shows an empty state; it never borrows food from another hall. The page displays the snapshot refresh date; menus and nutrition are not live guarantees.

@@ -23,11 +23,45 @@ let meals=[];
 const macroCalories=g=>safe(g.protein)*4+safe(g.carbs)*4+safe(g.fat)*9;
 function recommendedGoals(calories,protein){const fat=Math.round(calories*.275/9),carbs=Math.max(0,Math.round((calories-protein*4-fat*9)/4));return{calories,protein,carbs,fat}}
 const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLocaleDateString('en-CA')};
-function resetDailyLog(){const today=logDay(Date.now());if(state.logDay&&state.logDay!==today)state.log=[];state.logDay=today;persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();if(foods.length)renderDashboard()},next-now)}
+function resetDailyLog(){const today=logDay(Date.now());if(state.logDay&&state.logDay!==today)state.log=[];state.logDay=today;persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();renderDashboard();$('manualStatus').textContent=''},next-now)}
 const category=f=>{const n=f.name.toLowerCase();if(/cookie|cake|dessert|soft serve|ice cream|pudding|brownie|pie/.test(n))return'dessert';if(/avocado|nut|almond|peanut|cashew|seed|olive|guacamole|tahini|oil|butter/.test(n))return'fat';if(/chicken|beef|salmon|turkey|tuna|tofu|bean|lentil|dal|egg|yogurt|brisket|tempeh/.test(n))return'protein';if(/rice|pasta|noodle|potato|bread|waffle|bagel|roll|oatmeal|fries|samosa|cereal/.test(n))return'carb';return'vegetable'};
 const grams=f=>({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120);
 const totals=()=>CalFuelPortions.total(state.log,foods);
-function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=Math.round(t.calories);$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.round(Math.max(g.calories-t.calories,0))} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${Number(t[k].toFixed(1))}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`).join('')}
+function renderManualEntries() {
+  const entries=state.log.filter(entry=>entry?.source==='manual');
+  const label=isPreview?'Preview manual entries':'Today’s manual entries';
+  $('manualEntries').innerHTML='<h3>'+label+'</h3>'+(entries.length?'<ul>'+entries.map(entry=>
+    '<li class="manual-record"><div><b>'+escapeHtml(entry.name)+'</b><small>'+Number(entry.nutrition.calories.toFixed(1))+' calories · P '+Number(entry.nutrition.protein.toFixed(1))+'g · C '+Number(entry.nutrition.carbs.toFixed(1))+'g · F '+Number(entry.nutrition.fat.toFixed(1))+'g</small></div><button type="button" data-remove-manual="'+escapeHtml(entry.id)+'" aria-label="Remove '+escapeHtml(entry.name)+'">Remove</button></li>'
+  ).join('')+'</ul>':'<p class="muted">No manual foods recorded yet.</p>');
+  document.querySelectorAll('[data-remove-manual]').forEach(button=>button.onclick=()=>{
+    const entry=state.log.find(e=>e?.source==='manual'&&e.id===button.dataset.removeManual);
+    if(!entry)return;
+    state.log=state.log.filter(e=>e!==entry);persist();renderDashboard();
+    $('manualStatus').textContent='Removed '+entry.name+' from '+(isPreview?'preview':'today’s')+' totals.';
+  });
+}
+function setupManualEntry() {
+  const form=$('manualFoodForm');
+  const values=()=>Object.fromEntries(['name','calories','protein','carbs','fat'].map(k=>[k,form.elements.namedItem(k).value]));
+  const preview=()=>{
+    try {
+      const input=values(),n=CalFuelManual.nutrition(input);
+      $('manualPreview').textContent=Number(n.calories.toFixed(1))+' calories · Protein '+n.protein+'g · Carbs '+n.carbs+'g · Fat '+n.fat+'g'+(input.calories.trim()===''?' (calories calculated from macros)':' (calories entered from label)');
+    } catch(error){$('manualPreview').textContent=error.message;}
+  };
+  form.oninput=preview;
+  form.onsubmit=event=>{
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    try {
+      const entry=CalFuelManual.add(state,values(),logDay(Date.now()));
+      persist();renderDashboard();form.reset();preview();
+      $('manualStatus').textContent='Recorded '+entry.name+' · '+Number(entry.nutrition.calories.toFixed(1))+' calories toward '+(isPreview?'preview':'today’s')+' goals. Your targets are unchanged.';
+    } catch(error){$('manualStatus').textContent=error.message;}
+  };
+  preview();
+}
+function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=Math.round(t.calories);$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.round(Math.max(g.calories-t.calories,0))} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${Number(t[k].toFixed(1))}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`) .join('');renderManualEntries()}
 function renderTargetForm(){const g=state.goals,mode=state.targetMode,calories=mode==='calories'?safe($('calorieGoal').value)||g.calories:macroCalories({protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat});const recommended=recommendedGoals(calories,g.protein),shown=mode==='calories'?recommended:{protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat};$('calorieGoal').disabled=mode==='macros';['proteinGoal','carbGoal','fatGoal'].forEach(id=>$(id).disabled=mode==='calories');$('calorieGoal').value=calories;$('proteinGoal').value=shown.protein;$('carbGoal').value=shown.carbs;$('fatGoal').value=shown.fat;const total=macroCalories(shown),difference=calories-total;$('macroBreakdown').innerHTML=`<b>How your macros become calories</b><span>Protein ${shown.protein}g × 4 = ${shown.protein*4} kcal</span><span>Carbs ${shown.carbs}g × 4 = ${shown.carbs*4} kcal</span><span>Fat ${shown.fat}g × 9 = ${shown.fat*9} kcal</span><strong>Macro total: ${total} kcal${mode==='calories'?` · Difference: ${difference>0?'+':''}${difference} kcal`:''}</strong>`;if(mode==='calories')$('targetGuidance').textContent=`Protein keeps your current target of ${shown.protein}g; change it with Start with macros. Fat uses 27.5% of calories; carbs use the calories left after protein and fat.`;else $('targetGuidance').textContent='Your calorie target is calculated from your macros: protein and carbs are 4 kcal/g; fat is 9 kcal/g.'}
 function saveGoals(){const mode=document.querySelector('input[name="targetMode"]:checked').value;state.targetMode=mode;if(mode==='calories'){const calories=safe($('calorieGoal').value);state.goals=recommendedGoals(calories,state.goals.protein)}else{state.goals={calories:macroCalories({protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}),protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}}persist();renderTargetForm();renderDashboard();generatePlan()}
 
@@ -174,5 +208,5 @@ function generatePlan() {
     $('plan').className='plan empty';$('plan').textContent=error.message;
   }
 }
-async function init(){setupPreview();setupPlanOptions();resetDailyLog();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('input[name="targetMode"],#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
+async function init(){setupPreview();setupPlanOptions();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('input[name="targetMode"],#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
 init().catch(e=>$('menuInfo').textContent=`Could not load the menu: ${e.message}`);
