@@ -1,4 +1,5 @@
 (function(root) {
+  const history=typeof module!=='undefined'&&module.exports?require('./food-history.js'):root.CalFuelHistory;
   function nutrition(input) {
     const result={};
     for(const key of ['protein','carbs','fat']){
@@ -17,13 +18,15 @@
   function add(state,input,day,at=Date.now(),id='manual-'+at+'-'+Math.random().toString(36).slice(2)) {
     const name=String(input.name||'').trim();
     if(!name || name.length>120)throw new Error('Enter a food name between 1 and 120 characters.');
-    const entry={id,name,source:'manual',nutrition:nutrition(input),at,
+    const hasWeight=input.weightGrams!=null&&String(input.weightGrams).trim()!=='';
+    const weightGrams=hasWeight?Number(input.weightGrams):null;
+    if(hasWeight&&(!Number.isFinite(weightGrams)||weightGrams<=0))
+      throw new Error('Enter a portion weight greater than 0 grams, or leave it blank.');
+    const entry={id,name,source:'manual',nutrition:nutrition(input),weightGrams,at,
       caloriesSource:input.calories!=null&&String(input.calories).trim()!==''?'entered':'calculated'};
     // Validate before changing any saved data. Sleeping tabs must roll over
     // before a new entry is recorded, just like weighed dining-hall portions.
-    if(state.logDay!==day)state.log=[];
-    state.logDay=day;
-    state.log||=[];
+    history.rollover(state,day);
     state.log.push(entry);
     return entry;
   }

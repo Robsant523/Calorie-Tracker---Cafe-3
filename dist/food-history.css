@@ -1,0 +1,21 @@
+.history-section{margin:24px 24px 0;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.history-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.history-heading h2{font:700 26px Fraunces,serif;margin:4px 0 10px}
+.history-day{display:grid;gap:6px;font-size:13px;font-weight:600}
+.history-day select{border:1px solid var(--line);border-radius:6px;padding:10px;background:#fff;color:var(--ink);font:14px 'DM Sans',sans-serif;max-width:100%}
+.history-day select:focus-visible,.history-remove:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.history-summary{border-radius:8px;padding:14px 16px;background:#f0f4e9;font-size:14px;line-height:1.6;color:var(--green)}
+.history-list{list-style:none;margin:0;padding:0}
+.history-record{display:grid;grid-template-columns:minmax(180px,1.2fr) minmax(380px,2fr) auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.history-record:last-child{border-bottom:0}
+.history-food{min-width:0}.history-food h3{font-size:17px;line-height:1.4;margin:5px 0;overflow-wrap:anywhere}
+.history-food p{font-size:12px;margin:0;line-height:1.6}
+.history-source{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--green);text-transform:uppercase}
+.history-nutrition{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:12px;margin:0}
+.history-nutrition dt{color:var(--muted);font-size:12px;line-height:1.4;margin-bottom:5px}
+.history-nutrition dd{font-size:16px;font-weight:600;margin:0;overflow-wrap:anywhere}
+.history-remove{margin:0;padding:9px 12px;background:transparent;border:1px solid var(--line);font-size:13px}
+.history-empty{padding:20px 0;color:var(--muted);line-height:1.6}
+#historyStatus{font-size:14px;line-height:1.5}#historyStatus:empty{display:none}
+@media(max-width:1000px){.history-record{grid-template-columns:minmax(0,1fr) auto}.history-nutrition{grid-column:1/-1;grid-row:2}.history-remove{grid-column:2;grid-row:1}}
+@media(max-width:520px){.history-section{padding:18px}.history-day{width:100%}.history-nutrition{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 8px}.history-portion{grid-column:1/-1}.history-nutrition dd{font-size:15px}.history-record{gap:12px}}

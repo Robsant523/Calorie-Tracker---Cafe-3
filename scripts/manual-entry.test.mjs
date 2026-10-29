@@ -42,4 +42,16 @@ test('5 AM rollover clears yesterday before recording a manual food',()=>{
   add(state,input,logDay(after),after,'new-day');
   assert.equal(state.log.length,1);assert.equal(state.log[0].id,'new-day');
   assert.equal(state.goals.calories,2200);
+  assert.deepEqual(state.history[logDay(before)],[{id:'yesterday'}]);
+});
+test('optional portion weight is saved without scaling manually entered nutrition',()=>{
+  const state={logDay:'today',log:[]};
+  const weighed=add(state,{...input,weightGrams:'250.5'},'today');
+  assert.equal(weighed.weightGrams,250.5);
+  assert.equal(weighed.nutrition.calories,178);
+  assert.equal(add(state,input,'today').weightGrams,null);
+  const saved=JSON.stringify(state);
+  for(const weightGrams of ['0','-5','invalid',Infinity])
+    assert.throws(()=>add(state,{...input,weightGrams},'tomorrow'));
+  assert.equal(JSON.stringify(state),saved);
 });

@@ -40,13 +40,15 @@ test('sample menus exercise actual weekday/weekend scheduling and availability',
   }
 });
 test('preview goals, meal choices, schedule and food logging cannot change real state',()=>{
-  const saved={goals:{calories:2000},log:[{id:'real-food'}],planFoods:{'real-food':'Dinner'},mealSchedules:{Dinner:{share:100}},hallId:'crossroads'};
+  const saved={goals:{calories:2000},log:[{id:'real-food'}],history:{'2026-10-28':[{id:'past-food'}]},logDay:'2026-10-29',planFoods:{'real-food':'Dinner'},mealSchedules:{Dinner:{share:100}},hallId:'crossroads'};
   const original=JSON.stringify(saved);
   const writes=[];
   const storage={setItem:(...args)=>writes.push(args)};
   for(const mode of ['weekday','weekend']){
     const state=preview.createState(saved,mode);
     assert.deepEqual(state.log,[]);
+    assert.deepEqual(state.history,{});
+    assert.equal(state.logDay,undefined);
     assert.deepEqual(state.planFoods,{});
     assert.deepEqual(state.mealSchedules,{});
     state.goals.calories=1500;

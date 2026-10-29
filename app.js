@@ -23,26 +23,55 @@ let meals=[];
 const macroCalories=g=>safe(g.protein)*4+safe(g.carbs)*4+safe(g.fat)*9;
 function recommendedGoals(calories,protein){const fat=Math.round(calories*.275/9),carbs=Math.max(0,Math.round((calories-protein*4-fat*9)/4));return{calories,protein,carbs,fat}}
 const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLocaleDateString('en-CA')};
-function resetDailyLog(){const today=logDay(Date.now());if(state.logDay&&state.logDay!==today)state.log=[];state.logDay=today;persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();renderDashboard();$('manualStatus').textContent=''},next-now)}
+function resetDailyLog(){CalFuelHistory.rollover(state,logDay(Date.now()));persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();renderDashboard();$('manualStatus').textContent=''},next-now)}
 const category=f=>{const n=f.name.toLowerCase();if(/cookie|cake|dessert|soft serve|ice cream|pudding|brownie|pie/.test(n))return'dessert';if(/avocado|nut|almond|peanut|cashew|seed|olive|guacamole|tahini|oil|butter/.test(n))return'fat';if(/chicken|beef|salmon|turkey|tuna|tofu|bean|lentil|dal|egg|yogurt|brisket|tempeh/.test(n))return'protein';if(/rice|pasta|noodle|potato|bread|waffle|bagel|roll|oatmeal|fries|samosa|cereal/.test(n))return'carb';return'vegetable'};
 const grams=f=>({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120);
 const totals=()=>CalFuelPortions.total(state.log,foods);
-function renderManualEntries() {
-  const entries=state.log.filter(entry=>entry?.source==='manual');
-  const label=isPreview?'Preview manual entries':'Today’s manual entries';
-  $('manualEntries').innerHTML='<h3>'+label+'</h3>'+(entries.length?'<ul>'+entries.map(entry=>
-    '<li class="manual-record"><div><b>'+escapeHtml(entry.name)+'</b><small>'+Number(entry.nutrition.calories.toFixed(1))+' calories · P '+Number(entry.nutrition.protein.toFixed(1))+'g · C '+Number(entry.nutrition.carbs.toFixed(1))+'g · F '+Number(entry.nutrition.fat.toFixed(1))+'g</small></div><button type="button" data-remove-manual="'+escapeHtml(entry.id)+'" aria-label="Remove '+escapeHtml(entry.name)+'">Remove</button></li>'
-  ).join('')+'</ul>':'<p class="muted">No manual foods recorded yet.</p>');
-  document.querySelectorAll('[data-remove-manual]').forEach(button=>button.onclick=()=>{
-    const entry=state.log.find(e=>e?.source==='manual'&&e.id===button.dataset.removeManual);
-    if(!entry)return;
-    state.log=state.log.filter(e=>e!==entry);persist();renderDashboard();
-    $('manualStatus').textContent='Removed '+entry.name+' from '+(isPreview?'preview':'today’s')+' totals.';
+let selectedHistoryDay=null;
+const historyNumber=value=>Number.isFinite(Number(value))?Number(Number(value).toFixed(1)):'—';
+function historyRecord(entry) {
+  const saved=typeof entry==='string'?{id:entry}:entry;
+  const food=foods.find(f=>f.id===saved.id);
+  const hallNames={'cafe-3':'Café 3','clark-kerr':'Clark Kerr','crossroads':'Crossroads','foothill':'Foothill'};
+  return {...saved,name:saved.name||food?.name||'Previously recorded food',
+    diningHall:saved.diningHall||hallNames[saved.hallId]||food?.diningHall||'Dining hall',
+    nutrition:saved.nutrition||food};
+}
+function renderFoodHistory() {
+  const days=CalFuelHistory.days(state);
+  if(selectedHistoryDay&&!days.includes(selectedHistoryDay))selectedHistoryDay=null;
+  const day=selectedHistoryDay||state.logDay;
+  const dateLabel=value=>new Date(value+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+  $('historyTitle').textContent=isPreview?'Preview food history':'Food history';
+  $('historyNotice').textContent=isPreview?'Sample entries only. Preview history resets on reload and never changes your real records.':'Dining hall portions and manual foods, saved on this device. Daily totals reset at 5 AM; past days stay here. Dining hall nutrition is estimated.';
+  $('historyDay').innerHTML=days.map(value=>'<option value="'+escapeHtml(value)+'">'+(value===state.logDay?'Today · ':'')+escapeHtml(dateLabel(value))+'</option>').join('');
+  $('historyDay').value=day;
+  const entries=CalFuelHistory.entries(state,day),total=CalFuelPortions.total(entries,foods);
+  $('historySummary').textContent=entries.length+' '+(entries.length===1?'entry':'entries')+' · '+historyNumber(total.calories)+' calories · Protein '+historyNumber(total.protein)+'g · Carbs '+historyNumber(total.carbs)+'g · Fat '+historyNumber(total.fat)+'g';
+  $('foodHistory').innerHTML=entries.length?'<ul class="history-list">'+entries.map((entry,index)=>{
+    const record=historyRecord(entry),n=record.nutrition,manual=record.source==='manual';
+    const portion=Number(record.weightGrams)>0?historyNumber(record.weightGrams)+' g':'Weight not recorded';
+    const time=record.at?new Date(record.at).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'Time not recorded';
+    const source=manual?'Manual food':record.diningHall;
+    const metrics=[['Calories','calories',''],['Protein','protein',' g'],['Carbs','carbs',' g'],['Fat','fat',' g']].map(([label,key,unit])=>'<div><dt>'+label+'</dt><dd>'+(n?historyNumber(n[key])+unit:'—')+'</dd></div>').join('');
+    return '<li class="history-record"><div class="history-food"><span class="history-source">'+escapeHtml(source)+'</span><h3>'+escapeHtml(record.name)+'</h3><p class="muted">'+escapeHtml(time)+(manual?' · Entered nutrition':' · Estimated nutrition')+'</p></div><dl class="history-nutrition"><div class="history-portion"><dt>Portion eaten</dt><dd>'+portion+'</dd></div>'+metrics+'</dl><button type="button" class="history-remove" data-remove-entry="'+index+'" aria-label="Remove '+escapeHtml(record.name)+' from history">Remove</button></li>';
+  }).reverse().join('')+'</ul>':'<p class="history-empty">No food recorded for this day. Record a portion from the dining hall menu or enter a food manually above.</p>';
+  document.querySelectorAll('[data-remove-entry]').forEach(button=>button.onclick=()=>{
+    const removed=CalFuelHistory.remove(state,day,Number(button.dataset.removeEntry));
+    if(removed===undefined)return;
+    persist();renderDashboard();
+    $('historyStatus').textContent='Removed '+historyRecord(removed).name+' from '+(day===state.logDay?'today’s totals':dateLabel(day))+'.';
   });
+}
+function setupFoodHistory() {
+  $('historyDay').onchange=()=>{
+    selectedHistoryDay=$('historyDay').value===state.logDay?null:$('historyDay').value;
+    $('historyStatus').textContent='';renderFoodHistory();
+  };
 }
 function setupManualEntry() {
   const form=$('manualFoodForm');
-  const values=()=>Object.fromEntries(['name','calories','protein','carbs','fat'].map(k=>[k,form.elements.namedItem(k).value]));
+  const values=()=>Object.fromEntries(['name','calories','protein','carbs','fat','weightGrams'].map(k=>[k,form.elements.namedItem(k).value]));
   const preview=()=>{
     try {
       const input=values(),n=CalFuelManual.nutrition(input);
@@ -55,15 +84,64 @@ function setupManualEntry() {
     if(!form.reportValidity())return;
     try {
       const entry=CalFuelManual.add(state,values(),logDay(Date.now()));
+      selectedHistoryDay=null;$('historyStatus').textContent='';
       persist();renderDashboard();form.reset();preview();
       $('manualStatus').textContent='Recorded '+entry.name+' · '+Number(entry.nutrition.calories.toFixed(1))+' calories toward '+(isPreview?'preview':'today’s')+' goals. Your targets are unchanged.';
     } catch(error){$('manualStatus').textContent=error.message;}
   };
   preview();
 }
-function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=Math.round(t.calories);$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.round(Math.max(g.calories-t.calories,0))} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${Number(t[k].toFixed(1))}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`) .join('');renderManualEntries()}
-function renderTargetForm(){const g=state.goals,mode=state.targetMode,calories=mode==='calories'?safe($('calorieGoal').value)||g.calories:macroCalories({protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat});const recommended=recommendedGoals(calories,g.protein),shown=mode==='calories'?recommended:{protein:safe($('proteinGoal').value)||g.protein,carbs:safe($('carbGoal').value)||g.carbs,fat:safe($('fatGoal').value)||g.fat};$('calorieGoal').disabled=mode==='macros';['proteinGoal','carbGoal','fatGoal'].forEach(id=>$(id).disabled=mode==='calories');$('calorieGoal').value=calories;$('proteinGoal').value=shown.protein;$('carbGoal').value=shown.carbs;$('fatGoal').value=shown.fat;const total=macroCalories(shown),difference=calories-total;$('macroBreakdown').innerHTML=`<b>How your macros become calories</b><span>Protein ${shown.protein}g × 4 = ${shown.protein*4} kcal</span><span>Carbs ${shown.carbs}g × 4 = ${shown.carbs*4} kcal</span><span>Fat ${shown.fat}g × 9 = ${shown.fat*9} kcal</span><strong>Macro total: ${total} kcal${mode==='calories'?` · Difference: ${difference>0?'+':''}${difference} kcal`:''}</strong>`;if(mode==='calories')$('targetGuidance').textContent=`Protein keeps your current target of ${shown.protein}g; change it with Start with macros. Fat uses 27.5% of calories; carbs use the calories left after protein and fat.`;else $('targetGuidance').textContent='Your calorie target is calculated from your macros: protein and carbs are 4 kcal/g; fat is 9 kcal/g.'}
-function saveGoals(){const mode=document.querySelector('input[name="targetMode"]:checked').value;state.targetMode=mode;if(mode==='calories'){const calories=safe($('calorieGoal').value);state.goals=recommendedGoals(calories,state.goals.protein)}else{state.goals={calories:macroCalories({protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}),protein:safe($('proteinGoal').value),carbs:safe($('carbGoal').value),fat:safe($('fatGoal').value)}}persist();renderTargetForm();renderDashboard();generatePlan()}
+function renderDashboard(){const t=totals(),g=state.goals,p=Math.min(100,Math.round(t.calories/g.calories*100));$('caloriesTotal').textContent=Math.round(t.calories);$('calorieGoalLabel').textContent=g.calories;$('calorieRing').style.background=`conic-gradient(var(--orange) ${p*3.6}deg,#e9eee6 0deg)`;$('statusLine').textContent=t.calories?`${Math.round(Math.max(g.calories-t.calories,0))} kcal left today.`:'Start building your day.';$('macroGrid').innerHTML=[['Protein','protein'],['Carbs','carbs'],['Fat','fat']].map(([l,k])=>`<div class="macro"><b>${Number(t[k].toFixed(1))}<small>g</small></b><span>${l} · ${g[k]}g goal</span></div>`) .join('');renderFoodHistory()}
+function renderTargetForm() {
+  const mode=state.targetMode;
+  $('calorieGoal').disabled=mode==='macros';
+  ['proteinGoal','carbGoal','fatGoal'].forEach(id=>$(id).disabled=mode==='calories');
+  const {goals,error}=readTargetDraft();
+  if(error){
+    // Only calculated fields are rewritten. Editable values remain exactly as typed.
+    if(mode==='macros')$('calorieGoal').value='';
+    else ['proteinGoal','carbGoal','fatGoal'].forEach(id=>$(id).value='');
+    $('macroBreakdown').textContent='Complete your targets to preview the calorie breakdown.';
+    $('targetGuidance').textContent=error+' Your saved targets stay unchanged until you update them.';
+    return;
+  }
+  if(mode==='macros')$('calorieGoal').value=goals.calories;
+  else {
+    $('proteinGoal').value=goals.protein;
+    $('carbGoal').value=goals.carbs;
+    $('fatGoal').value=goals.fat;
+  }
+  const total=macroCalories(goals),difference=goals.calories-total;
+  $('macroBreakdown').innerHTML=`<b>How your macros become calories</b><span>Protein ${goals.protein}g × 4 = ${goals.protein*4} kcal</span><span>Carbs ${goals.carbs}g × 4 = ${goals.carbs*4} kcal</span><span>Fat ${goals.fat}g × 9 = ${goals.fat*9} kcal</span><strong>Macro total: ${total} kcal${mode==='calories'?` · Difference: ${difference>0?'+':''}${difference} kcal`:''}</strong>`;
+  $('targetGuidance').textContent=mode==='calories'
+    ? `Protein keeps your current target of ${goals.protein}g; change it with Start with macros. Fat uses 27.5% of calories; carbs use the calories left after protein and fat.`
+    : 'Your calorie target is calculated from your macros: protein and carbs are 4 kcal/g; fat is 9 kcal/g.';
+}
+function readTargetDraft() {
+  const read=id=>{
+    const raw=String($(id).value).trim();
+    return raw!==''&&Number.isFinite(Number(raw))?Number(raw):null;
+  };
+  if(state.targetMode==='calories'){
+    const calories=read('calorieGoal');
+    if(calories===null||calories<=0)return {error:'Enter a calorie goal greater than 0.'};
+    return {goals:recommendedGoals(calories,state.goals.protein)};
+  }
+  const protein=read('proteinGoal'),carbs=read('carbGoal'),fat=read('fatGoal');
+  if([protein,carbs,fat].some(value=>value===null||value<0))
+    return {error:'Enter all three macro goals as 0 or greater.'};
+  const calories=macroCalories({protein,carbs,fat});
+  if(!Number.isFinite(calories)||calories<=0)
+    return {error:'Your macro goals must add up to more than 0 calories.'};
+  return {goals:{calories,protein,carbs,fat}};
+}
+function saveGoals() {
+  state.targetMode=document.querySelector('input[name="targetMode"]:checked').value;
+  const {goals,error}=readTargetDraft();
+  if(error){renderTargetForm();return;}
+  state.goals=goals;
+  persist();renderTargetForm();renderDashboard();generatePlan();
+}
 
 let menuSnapshot;
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -161,10 +239,11 @@ function renderFoods() {
         const nutrition=CalFuelPortions.calculate(food,input.value,grams(food));
         const weightGrams=Number(input.value);
         // Catch an overnight sleeping tab before recording today's portion.
-        if(state.logDay!==logDay(Date.now())){state.log=[];state.logDay=logDay(Date.now());}
-        state.log.push({id:food.id,name:food.name,hallId:food.hallId,weightGrams,servingGrams:grams(food),nutrition,at:Date.now()});
+        CalFuelHistory.rollover(state,logDay(Date.now()));
+        state.log.push({id:food.id,name:food.name,source:'dining',hallId:food.hallId,diningHall:food.diningHall,weightGrams,servingGrams:grams(food),nutrition,at:Date.now()});
+        selectedHistoryDay=null;$('historyStatus').textContent='';
         persist();renderDashboard();input.value='';
-        feedback.textContent=`Recorded ${weightGrams}g of ${food.name} · ${Math.round(nutrition.calories)} kcal.`;
+        feedback.textContent=`Recorded ${weightGrams}g of ${food.name} · ${Math.round(nutrition.calories)} calories. See Food history for this portion.`;
       } catch(error) { feedback.textContent=error.message; }
     };
   });
@@ -208,5 +287,5 @@ function generatePlan() {
     $('plan').className='plan empty';$('plan').textContent=error.message;
   }
 }
-async function init(){setupPreview();setupPlanOptions();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('input[name="targetMode"],#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
+async function init(){setupPreview();setupPlanOptions();setupFoodHistory();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
 init().catch(e=>$('menuInfo').textContent=`Could not load the menu: ${e.message}`);

@@ -14,7 +14,13 @@ Portions fit calories and all three macros together, with a minimum quarter serv
 
 ### Manual foods
 
-Use **Enter food manually** below the daily totals for snacks, restaurant meals, or other foods outside the menu. Enter nutrition for the portion actually eaten: a name, protein, carbs, and fat in grams. Calories are optional; blank calories use protein × 4 + carbs × 4 + fat × 9, while an entered value uses the label calories as-is. **Record food eaten** adds to consumed totals without changing your targets or meal plan. Manual entries persist on this device, survive menu refreshes, and reset with the food log at 5 AM. Remove an incorrect entry from **Today’s manual entries**. Preview-mode entries remain isolated from real records.
+Use **Enter food manually** below the daily totals for snacks, restaurant meals, or other foods outside the menu. Enter nutrition for the portion actually eaten: a name, protein, carbs, and fat in grams. Calories are optional; blank calories use protein × 4 + carbs × 4 + fat × 9, while an entered value uses the label calories as-is. Optionally enter the portion weight in grams for your records; this does not scale the entered nutrition. **Record food eaten** adds to consumed totals without changing your targets or meal plan.
+
+### Food history
+
+**Food history** shows dining hall portions and manual foods together, newest first, with the hall or source, time, portion weight, calories, protein, carbs, and fat. Use **Day** to view earlier days and their totals. Each recorded portion is separate, even for the same dish; **Remove** corrects only that entry. Missing weights from older entries are shown as not recorded. Dining hall nutrition remains estimated.
+
+History is saved on this device and survives menu refreshes. At 5 AM local time, current consumption resets and the previous day's entries move into history. History starts with records still saved when this feature is first opened; records deleted by older daily resets cannot be recovered. Preview history is isolated from real records and resets on reload.
 
 A small, no-build calorie and macro tracker for UC Berkeley students. Choose Café 3, Clark Kerr, Crossroads, or Foothill with the **Where are you eating?** selector. Menu cards, saved plan selections, and automatic plan choices are limited to that hall. Daily consumption totals still include food logged from every hall.
 

@@ -4,6 +4,8 @@
     const copy = JSON.parse(JSON.stringify(saved));
     if (isPreview(mode)) {
       copy.log = [];
+      copy.history = {};
+      delete copy.logDay;
       copy.planFoods = {};
       copy.mealSchedules = {};
       copy.hallId = 'cafe-3';
