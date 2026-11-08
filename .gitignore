@@ -1,0 +1,9 @@
+# Local environment values. The example contains placeholders only.
+.env
+.env.*
+!.env.example
+node_modules/
+npm-debug.log*
+.DS_Store
+# Generated client includes public configuration; rebuild it for each environment.
+dist/lib/

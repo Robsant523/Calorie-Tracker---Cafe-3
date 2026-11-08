@@ -25,7 +25,7 @@ function recommendedGoals(calories,protein){const fat=Math.round(calories*.275/9
 const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLocaleDateString('en-CA')};
 function resetDailyLog(){CalFuelHistory.rollover(state,logDay(Date.now()));persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();renderDashboard();$('manualStatus').textContent=''},next-now)}
 const category=f=>{const n=f.name.toLowerCase();if(/cookie|cake|dessert|soft serve|ice cream|pudding|brownie|pie/.test(n))return'dessert';if(/avocado|nut|almond|peanut|cashew|seed|olive|guacamole|tahini|oil|butter/.test(n))return'fat';if(/chicken|beef|salmon|turkey|tuna|tofu|bean|lentil|dal|egg|yogurt|brisket|tempeh/.test(n))return'protein';if(/rice|pasta|noodle|potato|bread|waffle|bagel|roll|oatmeal|fries|samosa|cereal/.test(n))return'carb';return'vegetable'};
-const grams=f=>({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120);
+const grams=f=>Number.isFinite(f.servingGrams)&&f.servingGrams>0?f.servingGrams:isPreview?({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120):null;
 const totals=()=>CalFuelPortions.total(state.log,foods);
 let selectedHistoryDay=null;
 const historyNumber=value=>Number.isFinite(Number(value))?Number(Number(value).toFixed(1)):'—';
@@ -43,18 +43,18 @@ function renderFoodHistory() {
   const day=selectedHistoryDay||state.logDay;
   const dateLabel=value=>new Date(value+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
   $('historyTitle').textContent=isPreview?'Preview food history':'Food history';
-  $('historyNotice').textContent=isPreview?'Sample entries only. Preview history resets on reload and never changes your real records.':'Dining hall portions and manual foods, saved on this device. Daily totals reset at 5 AM; past days stay here. Dining hall nutrition is estimated.';
+  $('historyNotice').textContent=isPreview?'Sample entries only. Preview history resets on reload and never changes your real records.':'Dining hall portions and manual foods, saved on this device. Daily totals reset at 5 AM; past days stay here. New dining hall entries use nutrition published by Berkeley. Older entries keep their saved estimates.';
   $('historyDay').innerHTML=days.map(value=>'<option value="'+escapeHtml(value)+'">'+(value===state.logDay?'Today · ':'')+escapeHtml(dateLabel(value))+'</option>').join('');
   $('historyDay').value=day;
   const entries=CalFuelHistory.entries(state,day),total=CalFuelPortions.total(entries,foods);
   $('historySummary').textContent=entries.length+' '+(entries.length===1?'entry':'entries')+' · '+historyNumber(total.calories)+' calories · Protein '+historyNumber(total.protein)+'g · Carbs '+historyNumber(total.carbs)+'g · Fat '+historyNumber(total.fat)+'g';
   $('foodHistory').innerHTML=entries.length?'<ul class="history-list">'+entries.map((entry,index)=>{
     const record=historyRecord(entry),n=record.nutrition,manual=record.source==='manual';
-    const portion=Number(record.weightGrams)>0?historyNumber(record.weightGrams)+' g':'Weight not recorded';
+    const portion=Number(record.weightGrams)>0?(record.portionUnit==='oz'&&record.portionAmount>0?Number(record.portionAmount)+' oz (≈ '+historyNumber(record.weightGrams)+' g)':historyNumber(record.weightGrams)+' g'):Number(record.servings)>0?historyNumber(record.servings)+' × '+escapeHtml(record.servingSize||'published serving'):'Weight not recorded';
     const time=record.at?new Date(record.at).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'Time not recorded';
     const source=manual?'Manual food':record.diningHall;
     const metrics=[['Calories','calories',''],['Protein','protein',' g'],['Carbs','carbs',' g'],['Fat','fat',' g']].map(([label,key,unit])=>'<div><dt>'+label+'</dt><dd>'+(n?historyNumber(n[key])+unit:'—')+'</dd></div>').join('');
-    return '<li class="history-record"><div class="history-food"><span class="history-source">'+escapeHtml(source)+'</span><h3>'+escapeHtml(record.name)+'</h3><p class="muted">'+escapeHtml(time)+(manual?' · Entered nutrition':' · Estimated nutrition')+'</p></div><dl class="history-nutrition"><div class="history-portion"><dt>Portion eaten</dt><dd>'+portion+'</dd></div>'+metrics+'</dl><button type="button" class="history-remove" data-remove-entry="'+index+'" aria-label="Remove '+escapeHtml(record.name)+' from history">Remove</button></li>';
+    return '<li class="history-record"><div class="history-food"><span class="history-source">'+escapeHtml(source)+'</span><h3>'+escapeHtml(record.name)+'</h3><p class="muted">'+escapeHtml(time)+(manual?' · Entered nutrition':record.nutritionSource==='berkeley'?' · Berkeley published nutrition':' · Previously estimated nutrition')+'</p></div><dl class="history-nutrition"><div class="history-portion"><dt>Portion eaten</dt><dd>'+portion+'</dd></div>'+metrics+'</dl><button type="button" class="history-remove" data-remove-entry="'+index+'" aria-label="Remove '+escapeHtml(record.name)+' from history">Remove</button></li>';
   }).reverse().join('')+'</ul>':'<p class="history-empty">No food recorded for this day. Record a portion from the dining hall menu or enter a food manually above.</p>';
   document.querySelectorAll('[data-remove-entry]').forEach(button=>button.onclick=()=>{
     const removed=CalFuelHistory.remove(state,day,Number(button.dataset.removeEntry));
@@ -176,7 +176,7 @@ function renderHall() {
   $('menuTitle').textContent = 'Browse ' + hallName();
   const count = hallFoods().length;
   const date = new Date(menuSnapshot.refreshedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'});
-  $('menuInfo').textContent = hallName() + ' · ' + count + ' dishes · updated ' + date + ' · macros are estimates';
+  $('menuInfo').textContent = hallName() + ' · ' + count + ' dishes · updated ' + date + ' · '+hallFoods().filter(CalFuelPortions.hasNutrition).length+' with Berkeley nutrition';
   $('hallStatus').textContent = count
     ? 'Menu and plan choices are limited to ' + hallName() + '. Your daily food log includes all halls.'
     : 'No menu was published for ' + hallName() + ' in this snapshot. Choose another hall or refresh the menu.';
@@ -202,56 +202,69 @@ function setupDiningHalls(menu) {
 }
 
 function renderFoods() {
-  const term=$('search').value.toLowerCase(), meal=$('mealFilter').value, filter=$('categoryFilter').value;
+  const term=$('search').value.toLowerCase(),meal=$('mealFilter').value,filter=$('categoryFilter').value;
   const visible=hallFoods().filter(f=>(meal==='all'||availableAt(f,meal))&&(filter==='all'||category(f)===filter)&&f.name.toLowerCase().includes(term));
   $('foods').innerHTML=visible.map(f=>{
-    const chosen=state.planFoods[f.id]||'';
+    const chosen=state.planFoods[f.id]||'',known=CalFuelPortions.hasNutrition(f),weight=grams(f);
+    const canPlan=known&&weight>0;
+    const numbers=known?`${f.calories} calories · P ${f.protein}g · C ${f.carbs}g · F ${f.fat}g`:'Nutrition unavailable from Berkeley';
+    const serving=isPreview?`Sample estimate: ${weight}g per serving`:known?`Berkeley serving: ${f.servingSize}${weight?' (≈ '+historyNumber(weight)+' g)':''}`:'Use Enter food manually if you have nutrition from a label.';
+    const amountLabel=weight?'Portion eaten':'Published servings eaten';
+    const portion=known?`<form class="portion-form" data-portion="${escapeHtml(f.id)}">
+      <div class="portion-label-row"><label for="portion-${escapeHtml(f.id)}">${amountLabel}</label>${weight?`<select name="unit" aria-label="Weight unit for ${escapeHtml(f.name)}"><option value="g">grams</option><option value="oz">oz</option></select>`:''}</div>
+      <div class="portion-input-row"><input id="portion-${escapeHtml(f.id)}" name="weight" type="number" min="0.001" step="any" inputmode="decimal" required placeholder="${weight?'e.g. 150':'e.g. 1'}" aria-label="${weight?'Grams eaten of':'Servings eaten of'} ${escapeHtml(f.name)}"/>
+      <button type="submit">Record portion</button></div>
+      <p class="portion-feedback" role="status" aria-live="polite">${weight?'Enter the weight you ate to scale the nutrition.':'No gram weight was published. Record a count of the serving shown above.'}</p>
+    </form>`:'<p class="portion-feedback">This food is excluded from automatic plans and portion totals until published nutrition is available.</p>';
     return `<article class="food-card" data-hall="${escapeHtml(f.hallId)}">
       <span class="station">${escapeHtml(f.diningHall)} · ${escapeHtml(f.meals.join(' / '))} · <b>${category(f)}</b></span>
-      <h3>${escapeHtml(f.name)}</h3>
-      <p class="numbers">${f.calories} kcal · P ${f.protein}g · C ${f.carbs}g · F ${f.fat}g</p>
-      <p class="muted">Est. ${grams(f)}g per serving</p>
+      <h3>${escapeHtml(f.name)}</h3><p class="numbers">${numbers}</p>
+      <p class="muted">${escapeHtml(serving)}</p>
       <div class="food-actions"><div class="plan-picker">
-        <select data-plan-meal="${escapeHtml(f.id)}" aria-label="Meal for ${escapeHtml(f.name)}">
-          <option value="">Add to plan…</option>
+        <select data-plan-meal="${escapeHtml(f.id)}" aria-label="Meal for ${escapeHtml(f.name)}" ${canPlan?'':'disabled'}>
+          <option value="">${canPlan?'Add to plan…':'Gram plan unavailable'}</option>
           ${meals.map(m=>`<option value="${m}" ${chosen===m?'selected':''} ${availableAt(f,m)?'':'disabled'}>${m}${availableAt(f,m)?'':' (not offered)'}</option>`).join('')}
         </select>
-      </div></div>
-      <form class="portion-form" data-portion="${escapeHtml(f.id)}">
-        <label for="portion-${escapeHtml(f.id)}">Portion eaten (grams)</label>
-        <div class="portion-input-row"><input id="portion-${escapeHtml(f.id)}" name="weight" type="number" min="0.1" step="any" inputmode="decimal" required placeholder="e.g. 150" aria-label="Grams eaten of ${escapeHtml(f.name)}"/>
-        <button type="submit">Record portion</button></div>
-        <p class="portion-feedback" role="status" aria-live="polite">Enter your portion weight to preview its estimated macros.</p>
-      </form>
+      </div></div>${portion}
     </article>`;
-  }).join('') || '<p class="menu-empty" role="status">No dishes match this hall and these filters. Try another meal, category, or dining hall.</p>';
+  }).join('')||'<p class="menu-empty" role="status">No dishes match this hall and these filters. Try another meal, category, or dining hall.</p>';
   document.querySelectorAll('[data-portion]').forEach(form=>{
     const food=foods.find(f=>f.id===form.dataset.portion),input=form.elements.weight,feedback=form.querySelector('.portion-feedback');
-    input.oninput=()=>{
+    const reference=grams(food),unit=form.elements.namedItem('unit');
+    const unitLabel=()=>reference?(unit.value==='oz'?' oz':' g'):' servings';
+    const weightInGrams=()=>CalFuelPortions.toGrams(input.value,unit.value);
+    const calculate=()=>reference?CalFuelPortions.calculate(food,weightInGrams(),reference):CalFuelPortions.forServings(food,input.value);
+    const preview=()=>{
       try {
-        const n=CalFuelPortions.calculate(food,input.value,grams(food));
-        feedback.textContent=`${input.value}g ≈ ${Math.round(n.calories)} kcal · P ${Number(n.protein.toFixed(1))}g · C ${Number(n.carbs.toFixed(1))}g · F ${Number(n.fat.toFixed(1))}g`;
-      } catch { feedback.textContent='Enter a portion weight greater than 0 grams.'; }
+        const n=calculate();
+        feedback.textContent=`${input.value}${unitLabel()} ≈ ${historyNumber(n.calories)} calories · P ${historyNumber(n.protein)}g · C ${historyNumber(n.carbs)}g · F ${historyNumber(n.fat)}g`;
+      } catch(error){feedback.textContent=error.message;}
+    };
+    input.oninput=preview;
+    if(unit)unit.onchange=()=>{
+      input.setAttribute('aria-label',(unit.value==='oz'?'Ounces eaten of ':'Grams eaten of ')+food.name);
+      input.placeholder=unit.value==='oz'?'e.g. 5':'e.g. 150';
+      if(input.value!=='')preview();
     };
     form.onsubmit=event=>{
       event.preventDefault();
       try {
-        const nutrition=CalFuelPortions.calculate(food,input.value,grams(food));
-        const weightGrams=Number(input.value);
-        // Catch an overnight sleeping tab before recording today's portion.
+        const nutrition=calculate(),amount=Number(input.value),weightGrams=reference?weightInGrams():null;
+        const portionUnit=reference?unit.value:null;
         CalFuelHistory.rollover(state,logDay(Date.now()));
-        state.log.push({id:food.id,name:food.name,source:'dining',hallId:food.hallId,diningHall:food.diningHall,weightGrams,servingGrams:grams(food),nutrition,at:Date.now()});
+        state.log.push({id:food.id,name:food.name,source:'dining',hallId:food.hallId,diningHall:food.diningHall,
+          weightGrams,portionAmount:reference?amount:null,portionUnit,servingGrams:reference,servingSize:food.servingSize,
+          servings:reference?weightGrams/reference:amount,nutrition,nutritionSource:food.nutrition||'sample',at:Date.now()});
         selectedHistoryDay=null;$('historyStatus').textContent='';
         persist();renderDashboard();input.value='';
-        feedback.textContent=`Recorded ${weightGrams}g of ${food.name} · ${Math.round(nutrition.calories)} calories. See Food history for this portion.`;
-      } catch(error) { feedback.textContent=error.message; }
+        feedback.textContent=`Recorded ${amount}${unitLabel()} of ${food.name} · ${historyNumber(nutrition.calories)} calories. See Food history for this portion.`;
+      } catch(error){feedback.textContent=error.message;}
     };
   });
   document.querySelectorAll('[data-plan-meal]').forEach(s=>s.onchange=()=>{
     const id=s.dataset.planMeal;
     if(s.value)state.planFoods[id]=s.value;else delete state.planFoods[id];
-    persist();renderSelections();
-    invalidatePlan();
+    persist();renderSelections();invalidatePlan();
   });
 }
 function renderSelections(){const selected=Object.entries(state.planFoods).map(([id,meal])=>({food:hallFoods().find(f=>f.id===id),meal})).filter(x=>x.food);$('planSelections').innerHTML=selected.length?meals.map(meal=>{const list=selected.filter(x=>x.meal===meal);return list.length?`<div class="selection-meal"><p class="eyebrow">${meal.toUpperCase()}</p>${list.map(({food})=>`<div class="selected-food"><span><b>${food.name}</b><small>${category(food)} · P ${food.protein}g · C ${food.carbs}g · F ${food.fat}g</small></span><button class="remove-selection" data-remove="${food.id}">Remove</button></div>`).join('')}</div>`:''}).join(''):'<p class="muted">Choose dishes below and assign each to an available meal. Choose whether to use only your foods or fill missing categories.</p>';document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{delete state.planFoods[b.dataset.remove];persist();renderFoods();renderSelections();invalidatePlan()})}
@@ -279,13 +292,13 @@ function generatePlan() {
       const gap=Math.abs(delta)<0.5?'On target':number(Math.abs(delta))+' '+unit+(delta>0?' over':' under');
       return '<tr><th scope="row">'+k[0].toUpperCase()+k.slice(1)+'</th><td>'+number(result.total[k])+' '+unit+'</td><td>'+number(state.goals[k])+' '+unit+'</td><td>'+gap+'</td></tr>';
     }).join('');
-    const summary='<article class="day-summary"><p class="eyebrow">FULL-DAY PLAN · '+(isPreview?'SAMPLE DATA':'ESTIMATES')+'</p><h3>'+Math.round(result.total.calories)+' calories planned</h3><p>'+result.selectedCount+' of your choices included · '+result.autoCount+' auto-added foods</p><div class="plan-comparison"><table><caption>Planned totals compared with your daily targets</caption><thead><tr><th scope="col">Nutrient</th><th scope="col">Planned</th><th scope="col">Target</th><th scope="col">Difference</th></tr></thead><tbody>'+comparison+'</tbody></table></div><p class="muted">This plans your whole day, not just calories remaining. It does not record anything as eaten. Nutrition and serving weights are estimates.</p>'+(result.warnings.length?'<ul class="plan-warnings">'+result.warnings.map(w=>'<li>'+escapeHtml(w)+'</li>').join('')+'</ul>':'')+'</article>';
-    const cards=result.meals.map(m=>'<article class="meal-card"><p class="eyebrow">'+m.meal.toUpperCase()+' · '+m.share+'%</p><h3>'+Math.round(m.total.calories)+' calories</h3>'+(m.rows.length?m.rows.map(row=>'<div class="meal-item"><span><b>'+escapeHtml(row.food.name)+'</b><small>'+row.servings.toFixed(2)+' estimated servings · '+(row.auto?'Auto-added for '+row.reasons.join(' + '):'Your choice')+'</small><small>P '+number(row.nutrition.protein)+'g · C '+number(row.nutrition.carbs)+'g · F '+number(row.nutrition.fat)+'g</small></span><span><strong>'+row.weightGrams+'g</strong><small>'+Math.round(row.nutrition.calories)+' calories</small></span></div>').join(''):'<p class="muted">No foods planned for this meal. See the notes above.</p>')+'<p class="numbers">P '+number(m.total.protein)+'g · C '+number(m.total.carbs)+'g · F '+number(m.total.fat)+'g</p></article>').join('');
+    const summary='<article class="day-summary"><p class="eyebrow">FULL-DAY PLAN · '+(isPreview?'SAMPLE DATA':'BERKELEY NUTRITION')+'</p><h3>'+Math.round(result.total.calories)+' calories planned</h3><p>'+result.selectedCount+' of your choices included · '+result.autoCount+' auto-added foods</p><div class="plan-comparison"><table><caption>Planned totals compared with your daily targets</caption><thead><tr><th scope="col">Nutrient</th><th scope="col">Planned</th><th scope="col">Target</th><th scope="col">Difference</th></tr></thead><tbody>'+comparison+'</tbody></table></div><p class="muted">This plans your whole day, not just calories remaining. It does not record anything as eaten. Portions scale the published serving nutrition; actual preparation and portions may vary.</p>'+(result.warnings.length?'<ul class="plan-warnings">'+result.warnings.map(w=>'<li>'+escapeHtml(w)+'</li>').join('')+'</ul>':'')+'</article>';
+    const cards=result.meals.map(m=>'<article class="meal-card"><p class="eyebrow">'+m.meal.toUpperCase()+' · '+m.share+'%</p><h3>'+Math.round(m.total.calories)+' calories</h3>'+(m.rows.length?m.rows.map(row=>'<div class="meal-item"><span><b>'+escapeHtml(row.food.name)+'</b><small>'+row.servings.toFixed(2)+' servings · '+(row.auto?'Auto-added for '+row.reasons.join(' + '):'Your choice')+'</small><small>P '+number(row.nutrition.protein)+'g · C '+number(row.nutrition.carbs)+'g · F '+number(row.nutrition.fat)+'g</small></span><span><strong>'+row.weightGrams+'g</strong><small>'+Math.round(row.nutrition.calories)+' calories</small></span></div>').join(''):'<p class="muted">No foods planned for this meal. See the notes above.</p>')+'<p class="numbers">P '+number(m.total.protein)+'g · C '+number(m.total.carbs)+'g · F '+number(m.total.fat)+'g</p></article>').join('');
     $('plan').className='plan';
     $('plan').innerHTML=summary+cards;
   } catch(error) {
     $('plan').className='plan empty';$('plan').textContent=error.message;
   }
 }
-async function init(){setupPreview();setupPlanOptions();setupFoodHistory();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items.filter(f=>keys.every(k=>Number.isFinite(Number(f[k]))));setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
+async function init(){setupPreview();setupPlanOptions();setupFoodHistory();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items;setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
 init().catch(e=>$('menuInfo').textContent=`Could not load the menu: ${e.message}`);

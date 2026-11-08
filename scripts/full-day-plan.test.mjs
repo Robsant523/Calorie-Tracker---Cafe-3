@@ -78,3 +78,13 @@ test('mixed foods are not independently scaled to each macro and double counted'
   assert.equal(result.meals[0].rows[0].weightGrams,200);
   assert.equal(result.total.calories,580);
 });
+test('missing or guessed nutrition and unknown gram weights cannot silently enter plans',()=>{
+  const missing={...food('Missing','protein',30,0,0),protein:null,nutrition:'unavailable'};
+  const guessed={...food('Old estimate','protein',99,0,0),nutrition:'estimated'};
+  const noWeight=food('One piece','protein',80,0,0);
+  const result=build({...base,foods:[...foods,missing,guessed,noWeight],choices:{Missing:'Lunch','One piece':'Lunch'},
+    grams:f=>f.id==='One piece'?null:100});
+  assert.ok(!result.meals.flatMap(m=>m.rows).some(r=>['Missing','Old estimate','One piece'].includes(r.food.id)));
+  assert.ok(result.warnings.some(w=>w.includes('Missing was not included')));
+  assert.ok(result.warnings.some(w=>w.includes('One piece was not included')));
+});

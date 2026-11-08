@@ -46,11 +46,17 @@
     if(Math.abs(sum-100)>0.001)throw new Error(`Enabled meal percentages must total 100% (currently ${sum}%).`);
     if(keys.some(k=>!Number.isFinite(goals[k])||goals[k]<0)||goals.calories<=0)
       throw new Error('Set valid daily calorie and macro targets first.');
-    const pool=foods.filter(f=>f.hallId===hallId && keys.every(k=>Number.isFinite(Number(f[k]))&&Number(f[k])>=0))
+    const pool=foods.filter(f=>f.hallId===hallId && !['estimated','unavailable'].includes(f.nutrition) &&
+      keys.every(k=>f[k]!=null&&f[k]!==''&&Number.isFinite(Number(f[k]))&&Number(f[k])>=0) &&
+      Number.isFinite(grams(f))&&grams(f)>0)
       .map(f=>({...f,...Object.fromEntries(keys.map(k=>[k,Number(f[k])]))}));
     const warnings=[];
+    const excluded=foods.filter(f=>f.hallId===hallId&&!pool.some(p=>p.id===f.id));
+    if(excluded.length)warnings.push(`${excluded.length} menu items were excluded because nutrition or a serving weight in grams is unavailable. They can be recorded manually using known nutrition.`);
     for(const [id,meal] of Object.entries(choices)) {
       const food=pool.find(f=>f.id===id);
+      const missing=excluded.find(f=>f.id===id);
+      if(missing)warnings.push(`${missing.name} was not included: published nutrition or its serving weight is unavailable.`);
       if(food && (!enabled.includes(meal)||!available(food,meal)))
         warnings.push(`${food.name} was not included: ${meal} is disabled or that food is not offered at that meal.`);
     }

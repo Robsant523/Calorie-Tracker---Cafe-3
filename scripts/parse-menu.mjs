@@ -1,4 +1,5 @@
-// Read Berkeley's hall and meal containers; never infer a hall from a dish name.
+// Read Berkeley's hall and meal containers; never infer nutrition from a dish name.
+import {createHash} from 'node:crypto';
 export const HALLS = [
   { id: 'cafe-3', name: 'Café 3', sourceKey: 'Cafe_3' },
   { id: 'clark-kerr', name: 'Clark Kerr', sourceKey: 'Clark_Kerr_Campus' },
@@ -12,18 +13,8 @@ const decode = text => text.replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt|nbsp
   return {amp:'&', quot:'"', apos:"'", lt:'<', gt:'>', nbsp:' '}[key.toLowerCase()] || entity;
 }).trim();
 
-export function estimate(name) {
-  const n = name.toLowerCase();
-  if (/chicken|beef|salmon|turkey|tuna|brisket/.test(n)) return {calories:250,protein:30,carbs:5,fat:12};
-  if (/tofu|lentil|bean|dal|chili|peas/.test(n)) return {calories:180,protein:11,carbs:26,fat:4};
-  if (/rice|pasta|noodle|potato|bread|waffle|oatmeal|bagel/.test(n)) return {calories:210,protein:5,carbs:42,fat:3};
-  if (/vegetable|broccoli|carrot|salad|spinach|mushroom|zucchini|pepper/.test(n)) return {calories:70,protein:3,carbs:12,fat:2};
-  return {calories:150,protein:5,carbs:18,fat:6};
-}
-
-export function parseMenu(html, previousItems = []) {
-  const known = new Map(previousItems.map(item => [slug(item.name), item]));
-  const dishes = new Map(), stack = [];
+export function parseMenu(html) {
+  const dishes = new Map(), usedIds = new Set(), stack = [];
   // Tracking the nested <li> containers prevents a previous hall/meal leaking
   // into the next one. Recipe names are the first span, not allergen tooltip text.
   for (const token of html.matchAll(/<li\b([^>]*)>|<\/li\s*>/gi)) {
@@ -52,28 +43,34 @@ export function parseMenu(html, previousItems = []) {
     if (!rawName) continue;
     const name = decode(rawName), legacyId = slug(name);
     if (!legacyId) continue;
-    // Keep existing Café 3 IDs for saved logs; other halls have separate IDs.
-    const id = context.hall.id === 'cafe-3' ? legacyId : `${context.hall.id}--${legacyId}`;
+    const sourceRef={location:attributes['data-location'],recipeId:attributes['data-id']||'',menuId:attributes['data-menuid']||'',meal:context.meal};
+    // Different recipe/menu IDs can use the same display name and serving size.
+    // Merge only the exact recipe source, never a name match or old estimate.
+    const identity=JSON.stringify([context.hall.id,sourceRef.location,sourceRef.recipeId,sourceRef.menuId,name]);
     const date = `${file[2].slice(0,4)}-${file[2].slice(4,6)}-${file[2].slice(6,8)}`;
     const tags = classes.filter(c => !['recip'].includes(c));
-    const existing = dishes.get(id);
+    const existing = dishes.get(identity);
     if (existing) {
       existing.meals = [...new Set([...existing.meals, context.meal])];
       existing.tags = [...new Set([...existing.tags, ...tags])];
+      if(!existing.sourceRefs.some(ref=>ref.meal===context.meal))existing.sourceRefs.push(sourceRef);
       continue;
     }
-    const prior = known.get(legacyId);
-    const nutrition = prior && ['calories','protein','carbs','fat'].every(k => Number.isFinite(Number(prior[k]))) ? prior : estimate(name);
-    dishes.set(id, {
+    // Keep the first recipe's legacy ID so saved selections keep working.
+    const baseId=context.hall.id==='cafe-3'?legacyId:`${context.hall.id}--${legacyId}`;
+    let id=baseId;
+    if(usedIds.has(id))id=baseId+'--recipe-'+createHash('sha256').update(identity).digest('hex').slice(0,12);
+    usedIds.add(id);
+    dishes.set(identity, {
       id, name, hallId:context.hall.id, diningHall:context.hall.name,
       station:context.hall.name, menuDate:date, meal:context.meal, meals:[context.meal],
-      calories:Number(nutrition.calories), protein:Number(nutrition.protein), carbs:Number(nutrition.carbs), fat:Number(nutrition.fat),
-      tags:[...new Set(tags)], nutrition:'estimated',
+      calories:null,protein:null,carbs:null,fat:null,servingSize:null,servingGrams:null,
+      tags:[...new Set(tags)],nutrition:'unavailable',sourceRefs:[sourceRef],
     });
   }
   const items = [...dishes.values()];
   return {
-    schemaVersion:2,
+    schemaVersion:3,
     diningHalls:HALLS.map(({id,name}) => ({id,name,itemCount:items.filter(f => f.hallId === id).length})),
     items,
   };

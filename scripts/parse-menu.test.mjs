@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {parseMenu} from './parse-menu.mjs';
 
-const dish=(hall,name='Rice &amp; Beans',id='10') => `<li class="recip vegan-option" data-id="${id}" data-location="${Buffer.from(`/code/menus/${hall}_20261018.xml`).toString('base64')}"><span>${name}</span><span class="icons-wrap">Vegan Option</span></li>`;
+const dish=(hall,name='Rice &amp; Beans',id='10',menuId='50') => `<li class="recip vegan-option" data-id="${id}" data-menuid="${menuId}" data-location="${Buffer.from(`/code/menus/${hall}_20261018.xml`).toString('base64')}"><span>${name}</span><span class="icons-wrap">Vegan Option</span></li>`;
 const meal=(name,content) => `<li class="preiod-name Fall - ${name}"><span>Fall - ${name}</span><ul>${content}</ul></li>`;
 const hall=(name,content) => `<li class="location-name ${name} 20261018"><ul>${content}</ul></li>`;
 
@@ -23,10 +23,26 @@ test('unrecognized locations and mismatched encoded sources do not leak into ano
   const parsed=parseMenu(hall('Cafe 3',meal('Dinner',dish('Crossroads')))+hall('Bear Market',meal('Dinner',dish('Bear_Market')))+dish('Cafe_3'));
   assert.deepEqual(parsed.items,[]);
 });
-test('refresh preserves known estimates, source meal overrides stale defaults',()=>{
+test('menus never infer macros from names or preserve old fabricated estimates',()=>{
   const parsed=parseMenu(hall('Clark Kerr Campus',meal('Breakfast',dish('Clark_Kerr_Campus','Scrambled Eggs'))),[{name:'Scrambled Eggs',meal:'Lunch',calories:180,protein:13,carbs:2,fat:13}]);
   assert.equal(parsed.items[0].meal,'Breakfast');
   assert.equal(parsed.items[0].diningHall,'Clark Kerr');
-  assert.equal(parsed.items[0].calories,180);
-  assert.equal(parsed.items[0].nutrition,'estimated');
+  assert.equal(parsed.items[0].calories,null);
+  assert.equal(parsed.items[0].protein,null);
+  assert.equal(parsed.items[0].carbs,null);
+  assert.equal(parsed.items[0].fat,null);
+  assert.equal(parsed.items[0].servingGrams,null);
+  assert.equal(parsed.items[0].nutrition,'unavailable');
+  assert.deepEqual(parsed.items[0].sourceRefs,[{location:Buffer.from('/code/menus/Clark_Kerr_Campus_20261018.xml').toString('base64'),recipeId:'10',menuId:'50',meal:'Breakfast'}]);
+  assert.equal(parsed.schemaVersion,3);
+});
+test('identically named dishes with different recipe or menu IDs do not merge',()=>{
+  const html=hall('Cafe 3',meal('Brunch',dish('Cafe_3','Rice','10','50')+dish('Cafe_3','Rice','11','50'))+meal('Dinner',dish('Cafe_3','Rice','10','60')));
+  const {items}=parseMenu(html);
+  assert.equal(items.length,3);
+  assert.equal(items[0].id,'rice');
+  assert.equal(new Set(items.map(f=>f.id)).size,3);
+  assert.ok(items.slice(1).every(f=>f.id.startsWith('rice--recipe-')));
+  assert.deepEqual(items.map(f=>f.meals),[['Brunch'],['Brunch'],['Dinner']]);
+  assert.deepEqual(parseMenu(html).items.map(f=>f.id),items.map(f=>f.id));
 });
