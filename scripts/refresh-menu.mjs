@@ -93,7 +93,7 @@ export async function refreshMenu(args=process.argv.slice(2)) {
     writeFile(new URL('../data/cafe3-menu.js',import.meta.url),`window.CALFUEL_MENU=${JSON.stringify(payload).replaceAll('<','\\u003c')};\n`)
   ]);
   for(const hall of parsed.diningHalls)console.log(`${hall.name}: ${hall.itemCount} dishes${hall.itemCount?'':' (no menu published in this snapshot)'}`);
-  console.log(`Nutrition: ${nutrition.published} published, ${nutrition.unavailable} unavailable. Rebuild with npm run build to update the served app.`);
+  console.log(`Nutrition: ${nutrition.published} published, ${nutrition.unavailable} unavailable.`);
   return payload;
 }
 

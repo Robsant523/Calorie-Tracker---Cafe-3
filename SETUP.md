@@ -61,7 +61,7 @@ npm start
 2. Open `http://localhost:4173/`. The existing local tracker should work normally. There are no sign-up/log-in buttons yet.
 3. Confirm `http://localhost:4173/.env` and `http://localhost:4173/.git/config` return **404**. The server now serves only `dist/`, not the repository root.
 4. `git check-ignore .env dist/lib/supabase.mjs` should list both paths. `git status --short` must not show your `.env`.
-5. Stop the server with Ctrl+C. Restart `npm start` after changing `.env`, source files, or the menu snapshot so the output is rebuilt.
+5. Stop the server with Ctrl+C. Restart `npm start` after changing `.env` or source files so the output is rebuilt. The menu refresh commands synchronize menu data into the served output directly.
 
 If both values are blank, `npm run build` still produces a working local tracker. `check:supabase` fails with setup instructions, and requesting the client throws an actionable configuration error. Supplying only one value or a privileged key fails the build.
 
@@ -71,7 +71,7 @@ The generated module is `dist/lib/supabase.mjs`, built from `lib/supabase.mjs`. 
 
 Set the same two public environment variables in the build environment and run `npm ci` followed by `npm run build`. Deploy only the generated `dist/` directory. The small esbuild step bundles the npm SDK; existing app scripts remain plain JavaScript. The build copies an explicit list of public assets and the menu data, excluding `.env`, Git metadata, and source tooling. Never deploy the repository root or use the old root-level Python server after adding `.env`.
 
-`npm run preview` serves the last completed build without rebuilding. `npm start` builds first. After `npm run refresh-menu`, rebuild to update the served menu. Generated output must be rebuilt for each environment and must not be published after a failed build.
+`npm run preview` serves the last completed build without rebuilding. `npm start` builds first. `npm run refresh-menu` now refreshes the source/served snapshots and commits and pushes only those four files to `origin/main`. For local testing without publishing to GitHub, use `npm run refresh-menu:local`. See README.md for Git prerequisites and hosting deployment behavior. Generated output must be rebuilt for each environment and must not be published after a failed build.
 
 ## Phase boundary
 

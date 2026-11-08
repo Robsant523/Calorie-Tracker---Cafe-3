@@ -49,7 +49,7 @@ Menu cards show the reference serving size and per-serving macros. Calories and 
 
 Foods with missing nutrition remain visible with an unavailable notice and cannot silently enter calorie totals or plans. Foods with published nutrition but no explicit mass can be recorded by the published serving count; automatic gram plans exclude them. Nutrition is Berkeley's published recipe information, which Berkeley warns can vary with preparation and portioning. Previously recorded entries retain their saved values and are labeled as previous estimates; remove and re-enter a past entry if you need to correct it using known nutrition.
 
-Refresh uses the menu page's recipe identifiers and the same `get_recipe_details` request as [Berkeley's menu](https://dining.berkeley.edu/menus/). It makes at most four concurrent requests, retries transient failures once, and reports nutrition coverage. If all live nutrition requests fail, the previous snapshot is kept. An offline `--input` menu does not make network requests and marks nutrition unavailable. Rebuild after refreshing so the served app uses the new snapshot.
+Refresh uses the menu page's recipe identifiers and the same `get_recipe_details` request as [Berkeley's menu](https://dining.berkeley.edu/menus/). It makes at most four concurrent requests, retries transient failures once, and reports nutrition coverage. If all live nutrition requests fail, the previous snapshot is kept. An offline `--input` menu does not make network requests and marks nutrition unavailable. The refresh command also synchronizes the served menu snapshots in `dist/data/`.
 
 ## Refresh the menu
 
@@ -57,10 +57,23 @@ Refresh uses the menu page's recipe identifiers and the same `get_recipe_details
 npm run refresh-menu
 ```
 
+This now refreshes the menu **and commits and pushes its four snapshot files to `origin/main`**. It checks your branch and fetches GitHub before refreshing; your checkout must be on `main`, track `origin/main`, and have no unpushed commits or unpulled changes. It synchronizes `data/cafe3-menu.{json,js}` into `dist/data/` without rebuilding or changing other site assets. Other edits and staged files stay out of the menu commit. You need Git push access and GitHub authentication configured on your computer.
+
+A push makes the snapshot available on GitHub. A GitHub Pages deployment or other hosting integration must deploy that branch for the public website to change; an independently hosted `chatgpt.site` does not redeploy just because you pushed GitHub. This command does not add a daily schedule. Refresh timestamps are recorded, so another successful refresh can create a new snapshot commit even when the dishes have not changed.
+
+For a local refresh without Git actions, use:
+
+```bash
+npm run refresh-menu:local
+# Or: npm run refresh-menu -- --local-only
+```
+
+If fetching GitHub fails or the branches differ, the command stops before changing the menu. If the menu fetch fails, nothing is committed. If pushing fails after a commit, the local commit is kept; resolve the connection/authentication or branch issue and run `git push origin main`. No force-push, automatic rebase, reset, or stash is performed.
+
 This retrieves the public Berkeley Dining menu and preserves each dish's dining hall and meal services in `data/cafe3-menu.json` and its JavaScript companion. The original filenames remain for compatibility. The parser cross-checks hall containers against the encoded source location and keeps shared dishes separate between halls. Existing Café 3 IDs are retained for saved logs. The importer fetches each recipe’s official nutrition popup using its source location, recipe ID, and menu ID. It validates the recipe name and nutrient labels, preserves the published decimals, and converts explicit weight units (such as ounces) to grams. It never assigns macros from dish-name keywords or preserves old guessed macros. Missing or failed nutrition is marked unavailable, never zero. Recipes with different source identifiers stay separate even when their names match.
 
-For a previously downloaded official HTML snapshot, run `npm run refresh-menu -- --input /absolute/path/to/menu.html`. Run `npm test` for the parser regression checks.
+For a previously downloaded official HTML snapshot, run `npm run refresh-menu -- --input /absolute/path/to/menu.html`. Offline input always stays local and does not commit or push; nutrition is unavailable unless fetched through the live importer. Run `npm test` for parser and isolated Git publishing regression checks (these use temporary local repositories and never push test data to GitHub).
 
-The deployable static bundle is in `dist/`. Run `npm run build` after changing code, environment values, or menu data; it copies only public assets and bundles the Supabase SDK. `npm run preview` serves the last build. Deploy only `dist/`; do not serve the repository root after adding `.env`.
+The deployable static bundle is in `dist/`. Run `npm run build` after changing code or environment values; it copies only public assets and bundles the Supabase SDK. `npm run preview` serves the last build. Deploy only `dist/`; do not serve the repository root after adding `.env`.
 
 Source: https://dining.berkeley.edu/menus/
