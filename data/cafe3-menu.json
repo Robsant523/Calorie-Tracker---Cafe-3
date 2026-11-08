@@ -1,6 +1,6 @@
 {
   "source": "https://dining.berkeley.edu/menus/",
-  "refreshedAt": "2026-11-08T07:14:56.711Z",
+  "refreshedAt": "2026-11-08T07:54:24.486Z",
   "schemaVersion": 3,
   "diningHalls": [
     {
@@ -55,7 +55,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "gardein-strip-fajitas",
@@ -90,7 +90,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "mexican-rice",
@@ -122,7 +122,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "roasted-mexican-vegetable-blend",
@@ -154,7 +154,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "refried-beans",
@@ -186,7 +186,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "flour-tortilla",
@@ -220,7 +220,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "scrambled-eggs",
@@ -253,7 +253,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "potato-wedges",
@@ -285,7 +285,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "mung-bean-patty",
@@ -317,7 +317,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "vegan-italian-sausage",
@@ -349,7 +349,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-beef-patty",
@@ -382,7 +382,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-macaroni-cheeseburger",
@@ -419,7 +419,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sauteed-green-beans",
@@ -451,7 +451,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "assorted-dinner-rolls",
@@ -485,7 +485,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "fettucini-alfredo-pasta",
@@ -520,7 +520,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "kidney-beans",
@@ -552,7 +552,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "rice-congee",
@@ -584,7 +584,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "steamed-broccoli",
@@ -616,7 +616,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "baked-diced-sweet-potato",
@@ -648,7 +648,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sauteed-mushroom",
@@ -680,7 +680,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-chicken-thigh",
@@ -712,7 +712,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "southwestern-corn-chowder",
@@ -744,7 +744,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "fiery-veggie-chili",
@@ -776,7 +776,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "non-fat-plain-greek-yogurt",
@@ -810,7 +810,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "dairy-free-vanilla-yogurt",
@@ -842,7 +842,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "whipped-cream-cheese",
@@ -876,7 +876,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sun-dried-tomato-cream-cheese",
@@ -910,7 +910,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "chive-cream-cheese",
@@ -944,7 +944,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sunflower-seed-butter",
@@ -976,7 +976,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "unsalted-butter",
@@ -1010,7 +1010,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "strawberry-jelly",
@@ -1042,7 +1042,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "raisins",
@@ -1074,7 +1074,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "pumpkin-seeds",
@@ -1106,7 +1106,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sunflower-seeds",
@@ -1138,7 +1138,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "chia-seeds",
@@ -1170,7 +1170,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-almond",
@@ -1203,7 +1203,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "dried-cranberry",
@@ -1235,7 +1235,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "hummus",
@@ -1271,7 +1271,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-tomato",
@@ -1303,7 +1303,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-cucumber",
@@ -1335,7 +1335,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "mashed-avocado-with-lemon",
@@ -1367,7 +1367,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-radish",
@@ -1399,7 +1399,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "fruit-salad",
@@ -1431,7 +1431,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "orange",
@@ -1463,7 +1463,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "banana",
@@ -1495,7 +1495,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "apple",
@@ -1527,7 +1527,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "balsamic-vinegar-glaze",
@@ -1559,7 +1559,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "romaine-lettuce",
@@ -1591,7 +1591,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "base-mixed-greens",
@@ -1623,7 +1623,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "baby-spinach",
@@ -1655,7 +1655,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "steamed-beets",
@@ -1687,7 +1687,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "shredded-carrots",
@@ -1719,7 +1719,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "grape-tomato",
@@ -1751,7 +1751,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "garbanzo-beans",
@@ -1783,7 +1783,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "paprika-rosemary-tofu",
@@ -1816,7 +1816,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "balsamic-vinaigrette",
@@ -1849,7 +1849,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "ranch-dressing",
@@ -1885,7 +1885,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "1000-island-dressing",
@@ -1919,7 +1919,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "asian-sesame-dressing",
@@ -1956,7 +1956,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "italian-dressing",
@@ -1989,7 +1989,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "blue-cheese-dressing",
@@ -2024,7 +2024,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "blood-orange-vinaigrette",
@@ -2057,7 +2057,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "poppy-seed-dressing",
@@ -2091,7 +2091,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "apple-cider-vinegar",
@@ -2123,7 +2123,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "balsamic-vinegar",
@@ -2155,7 +2155,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "olive-oil",
@@ -2187,7 +2187,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "everything-bagels",
@@ -2223,7 +2223,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "cinnamon-raisin-bagels",
@@ -2258,7 +2258,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "plain-bagels",
@@ -2293,7 +2293,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-whole-wheat-vegan-bread",
@@ -2328,7 +2328,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "vegan-midnight-cookie",
@@ -2364,7 +2364,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "luscious-lemon-bar",
@@ -2402,7 +2402,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "chocolate-soft-serve",
@@ -2434,7 +2434,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "vanilla-soft-serve",
@@ -2466,7 +2466,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-tater-tot-nachos-with-beef",
@@ -2499,7 +2499,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "soyrizo",
@@ -2532,7 +2532,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "medium-grain-rice",
@@ -2564,7 +2564,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "italian-vegetable-blend",
@@ -2596,7 +2596,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-macaroni-cheeseburger--recipe-6e9b5613d07c",
@@ -2633,7 +2633,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sauteed-green-beans--recipe-5a1f26cfe819",
@@ -2665,7 +2665,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "assorted-dinner-rolls--recipe-ded1b3404232",
@@ -2699,7 +2699,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "penne-pasta",
@@ -2733,7 +2733,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-chipotle-sauce",
@@ -2769,7 +2769,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "gluten-free-penne-pasta",
@@ -2801,7 +2801,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "halal-beef-marinara-sauce",
@@ -2833,7 +2833,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "housemade-marinara-sauce",
@@ -2865,7 +2865,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "steamed-broccoli-and-cauliflower",
@@ -2897,7 +2897,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "navy-beans",
@@ -2929,7 +2929,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sauteed-mushroom--recipe-772cbf54b67a",
@@ -2961,7 +2961,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "southwestern-corn-chowder--recipe-17e57c16b923",
@@ -2993,7 +2993,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "fiery-veggie-chili--recipe-b006c141e6a1",
@@ -3025,7 +3025,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "romaine-lettuce--recipe-68e7c8ad0052",
@@ -3057,7 +3057,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "base-mixed-greens--recipe-2cead63477ae",
@@ -3089,7 +3089,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "baby-spinach--recipe-73488195706e",
@@ -3121,7 +3121,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "steamed-beets--recipe-b5047b1cb60e",
@@ -3153,7 +3153,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "shredded-carrots--recipe-35013b163e82",
@@ -3185,7 +3185,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-cucumber--recipe-c7c6144b2403",
@@ -3217,7 +3217,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-radish--recipe-7584ba939f88",
@@ -3249,7 +3249,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "grape-tomato--recipe-61f3a4ed45dd",
@@ -3281,7 +3281,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "garbanzo-beans--recipe-d44e7fb49b11",
@@ -3313,7 +3313,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "paprika-rosemary-tofu--recipe-c72275d199b7",
@@ -3346,7 +3346,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "balsamic-vinaigrette--recipe-74af7777cc37",
@@ -3379,7 +3379,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "ranch-dressing--recipe-67ed1a37bd61",
@@ -3415,7 +3415,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "1000-island-dressing--recipe-a12b70f40a34",
@@ -3449,7 +3449,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "asian-sesame-dressing--recipe-4b3097b13276",
@@ -3486,7 +3486,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "italian-dressing--recipe-1902c9ffc44b",
@@ -3519,7 +3519,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "blue-cheese-dressing--recipe-52728aec2432",
@@ -3554,7 +3554,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "blood-orange-vinaigrette--recipe-a469a8b73bde",
@@ -3587,7 +3587,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "poppy-seed-dressing--recipe-caa8cb58b0a8",
@@ -3621,7 +3621,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "apple-cider-vinegar--recipe-bf6e88b429f8",
@@ -3653,7 +3653,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "balsamic-vinegar--recipe-cc480d5cc7df",
@@ -3685,7 +3685,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "olive-oil--recipe-b829ddf0f6f1",
@@ -3717,7 +3717,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "raisins--recipe-6ac39c3c096f",
@@ -3749,7 +3749,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sunflower-seeds--recipe-b50201ea4a10",
@@ -3781,7 +3781,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "pumpkin-seeds--recipe-67e9d15e5fa1",
@@ -3813,7 +3813,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "dried-cranberry--recipe-2055141e0b89",
@@ -3845,7 +3845,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-almond--recipe-db1d32bcd7cb",
@@ -3878,7 +3878,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "egg-salad",
@@ -3912,7 +3912,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "tuna-salad",
@@ -3946,7 +3946,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "sliced-pickle",
@@ -3979,7 +3979,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "vegan-midnight-cookie--recipe-9e7f7b348ace",
@@ -4015,7 +4015,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "luscious-lemon-bar--recipe-f0314f530860",
@@ -4053,7 +4053,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "fruits-of-the-forest-pie",
@@ -4088,7 +4088,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "chocolate-soft-serve--recipe-36b9c3b7a2aa",
@@ -4120,7 +4120,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "vanilla-soft-serve--recipe-5a83409ff0a6",
@@ -4152,7 +4152,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--pomegranate-baked-chicken-thigh",
@@ -4184,7 +4184,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--grilled-paprika-tofu",
@@ -4217,7 +4217,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--roasted-root-veggies",
@@ -4249,7 +4249,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--saffron-coriander-pilaf-rice",
@@ -4281,7 +4281,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--scrambled-eggs",
@@ -4314,7 +4314,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--ham-and-cheddar-eggs-scramble",
@@ -4348,7 +4348,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--potato-wedges",
@@ -4380,7 +4380,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--chicken-apple-sausage",
@@ -4412,7 +4412,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--brown-rice",
@@ -4444,7 +4444,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--soyrizo-scramble",
@@ -4477,7 +4477,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--roasted-crimini-mushroom",
@@ -4509,7 +4509,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--rotisserie-chicken",
@@ -4541,7 +4541,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--halal-ground-beef",
@@ -4573,7 +4573,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--black-beans",
@@ -4605,7 +4605,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--honey-glazed-carrots",
@@ -4637,7 +4637,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--saffron-basmati-rice",
@@ -4669,7 +4669,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--oatmeal",
@@ -4701,7 +4701,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--lobster-bisque",
@@ -4740,7 +4740,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--non-fat-plain-greek-yogurt",
@@ -4774,7 +4774,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--low-fat-vanilla-greek-yogurt",
@@ -4807,7 +4807,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--gluten-free-granola",
@@ -4839,7 +4839,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--romaine-lettuce",
@@ -4871,7 +4871,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--baby-spinach",
@@ -4903,7 +4903,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--base-mixed-greens",
@@ -4935,7 +4935,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--steamed-beets",
@@ -4967,7 +4967,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--matchstick-carrots",
@@ -4999,7 +4999,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sliced-cucumber",
@@ -5031,7 +5031,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--grape-tomato",
@@ -5063,7 +5063,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--garlic-cheese-crouton",
@@ -5098,7 +5098,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--dried-cranberry",
@@ -5130,7 +5130,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--raisins",
@@ -5162,7 +5162,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sunflower-seeds",
@@ -5194,7 +5194,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--pumpkin-seeds",
@@ -5226,7 +5226,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--olive-oil",
@@ -5258,7 +5258,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--balsamic-vinegar",
@@ -5290,7 +5290,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--apple-cider-vinegar",
@@ -5322,7 +5322,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--1000-island-dressing",
@@ -5356,7 +5356,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--balsamic-vinaigrette",
@@ -5389,7 +5389,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--blood-orange-vinaigrette",
@@ -5422,7 +5422,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--blue-cheese-dressing",
@@ -5457,7 +5457,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--caesar-dressing",
@@ -5492,7 +5492,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--italian-dressing",
@@ -5525,7 +5525,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--poppy-seed-dressing",
@@ -5559,7 +5559,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--ranch-dressing",
@@ -5595,7 +5595,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--asian-sesame-dressing",
@@ -5632,7 +5632,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--garbanzo-beans",
@@ -5664,7 +5664,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--paprika-rosemary-tofu",
@@ -5697,7 +5697,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--tuna-salad",
@@ -5731,7 +5731,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--egg-salad",
@@ -5765,7 +5765,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sunflower-butter",
@@ -5797,7 +5797,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--banana",
@@ -5829,7 +5829,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--orange",
@@ -5861,7 +5861,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--cinnamon-cereal-milk-cake",
@@ -5899,7 +5899,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--peach-pie",
@@ -5934,7 +5934,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--assorted-mini-cheesecakes",
@@ -5973,7 +5973,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--chimichuri-tri-tip",
@@ -6005,7 +6005,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--vegan-celebration-roast",
@@ -6039,7 +6039,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--tomato-chutney",
@@ -6071,7 +6071,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--maple-roasted-butternut-squash",
@@ -6103,7 +6103,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sauteed-onion-pepper-mushroom",
@@ -6135,7 +6135,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--mashed-yukon-potato",
@@ -6170,7 +6170,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--assorted-dinner-rolls",
@@ -6204,7 +6204,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--rotisserie-chicken--recipe-0b71656ea572",
@@ -6236,7 +6236,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--black-beans--recipe-f04aac8ed3ae",
@@ -6268,7 +6268,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--honey-glazed-carrots--recipe-cddb3ffb3130",
@@ -6300,7 +6300,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--saffron-basmati-rice--recipe-b0260aa38951",
@@ -6332,7 +6332,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--herbed-roasted-beef-tri-tip",
@@ -6364,7 +6364,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--cheese-pizza",
@@ -6400,7 +6400,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--bacon-and-mushroom-pizza-with-truffle-oil",
@@ -6436,7 +6436,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--penne-pasta",
@@ -6470,7 +6470,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--gluten-free-penne-pasta",
@@ -6502,7 +6502,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--marinara-sauce",
@@ -6534,7 +6534,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--alfredo-sauce",
@@ -6567,7 +6567,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--roasted-zucchini-mushroom",
@@ -6599,7 +6599,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--hawaiian-dinner-roll",
@@ -6637,7 +6637,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--native-three-sisters-bean-soup",
@@ -6669,7 +6669,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--grandma-mary-s-chicken-soup",
@@ -6703,7 +6703,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--romaine-lettuce--recipe-3e152a0f28b0",
@@ -6735,7 +6735,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--baby-spinach--recipe-02dbb4ee6aae",
@@ -6767,7 +6767,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--base-mixed-greens--recipe-e02bbbce6b6a",
@@ -6799,7 +6799,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sliced-red-beets",
@@ -6831,7 +6831,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--steamed-beets--recipe-ad5eb5ce0911",
@@ -6863,7 +6863,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--matchstick-carrots--recipe-edf4f64c0007",
@@ -6895,7 +6895,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sliced-cucumber--recipe-4c02ee3360d3",
@@ -6927,7 +6927,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--grape-tomato--recipe-c2a65a427116",
@@ -6959,7 +6959,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--garlic-cheese-crouton--recipe-64eaa978efee",
@@ -6994,7 +6994,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--dried-cranberry--recipe-201bfac5043c",
@@ -7026,7 +7026,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--raisins--recipe-9bb915c2cb7f",
@@ -7058,7 +7058,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sunflower-seeds--recipe-0e6eaed4f97b",
@@ -7090,7 +7090,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--pumpkin-seeds--recipe-2485454ba53c",
@@ -7122,7 +7122,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--olive-oil--recipe-b86c5487fb6f",
@@ -7154,7 +7154,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--balsamic-vinegar--recipe-a9118c7f78eb",
@@ -7186,7 +7186,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--ranch-dressing--recipe-5c0eb633c8d2",
@@ -7222,7 +7222,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--caesar-dressing--recipe-87c3e6fc9562",
@@ -7257,7 +7257,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--balsamic-vinaigrette--recipe-28b020dfdb9a",
@@ -7290,7 +7290,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--1000-island-dressing--recipe-d4c042deb1e3",
@@ -7324,7 +7324,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--blue-cheese-dressing--recipe-8e187678eac6",
@@ -7359,7 +7359,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--italian-dressing--recipe-7e4a4fdb1632",
@@ -7392,7 +7392,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--paprika-rosemary-tofu--recipe-8edf18e11ba1",
@@ -7425,7 +7425,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--bias-cut-carrots",
@@ -7457,7 +7457,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--shredded-carrots",
@@ -7489,7 +7489,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--shredded-rainbow-carrots",
@@ -7521,7 +7521,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--whole-baby-carrots",
@@ -7553,7 +7553,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--carrot-sticks",
@@ -7585,7 +7585,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--english-cucumbers",
@@ -7617,7 +7617,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--diced-cucumbers",
@@ -7649,7 +7649,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--red-radishes",
@@ -7681,7 +7681,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--sliced-radish",
@@ -7713,7 +7713,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--cherry-tomatoes",
@@ -7745,7 +7745,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--heirloom-tomato",
@@ -7777,7 +7777,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--apple-cider-vinegar--recipe-5fbe711f4ed5",
@@ -7809,7 +7809,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--asian-sesame-dressing--recipe-ed464db1d87e",
@@ -7846,7 +7846,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--poppy-seed-dressing--recipe-ce9e5d275370",
@@ -7880,7 +7880,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--blood-orange-vinaigrette--recipe-c93c7416be17",
@@ -7913,7 +7913,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--tuna-salad--recipe-6b9db4b0106b",
@@ -7947,7 +7947,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--egg-salad--recipe-eea3009a2db3",
@@ -7981,7 +7981,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--red-apple",
@@ -8013,7 +8013,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--banana--recipe-caf77c7e77a5",
@@ -8045,7 +8045,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--orange--recipe-04df8a67ace4",
@@ -8077,7 +8077,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--cinnamon-cereal-milk-cake--recipe-2922112f4596",
@@ -8115,7 +8115,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--peach-pie--recipe-b4e772572a49",
@@ -8150,7 +8150,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "clark-kerr--assorted-mini-cheesecakes--recipe-cb41d9581a04",
@@ -8189,7 +8189,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--scrambled-eggs",
@@ -8222,7 +8222,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--mung-bean-patty",
@@ -8254,7 +8254,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-sausage-mixed-pepper-stir-fry",
@@ -8286,7 +8286,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--turkey-sausage-link",
@@ -8318,7 +8318,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--poblano-fries",
@@ -8350,7 +8350,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--blueberry-baked-oatmeal",
@@ -8385,7 +8385,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sausage-potato-bake",
@@ -8419,7 +8419,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--bacon-and-kale-pizza",
@@ -8455,7 +8455,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--cheese-pizza",
@@ -8491,7 +8491,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--chicken-fried-steak-with-gravy",
@@ -8525,7 +8525,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-chicken-patty-smothered-in-gravy",
@@ -8560,7 +8560,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--southern-smothered-onion-potato",
@@ -8592,7 +8592,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--roasted-carrots-parsnips-and-beets",
@@ -8624,7 +8624,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--boiled-balsamic-pearl-onion-peas",
@@ -8656,7 +8656,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--biscuits",
@@ -8693,7 +8693,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--belgian-waffle",
@@ -8730,7 +8730,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--grits",
@@ -8762,7 +8762,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--oatmeal",
@@ -8794,7 +8794,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--jasmine-rice",
@@ -8826,7 +8826,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--brown-rice",
@@ -8858,7 +8858,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--halal-roasted-tri-tip",
@@ -8890,7 +8890,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-wellness-stew",
@@ -8922,7 +8922,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--quinoa",
@@ -8954,7 +8954,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--kidney-beans",
@@ -8986,7 +8986,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--brussels-sprouts",
@@ -9018,7 +9018,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--roasted-peppers",
@@ -9050,7 +9050,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--overnight-oats-with-peach",
@@ -9082,7 +9082,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-scrambled-egg",
@@ -9114,7 +9114,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--split-pea-soup",
@@ -9146,7 +9146,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--lobster-bisque",
@@ -9185,7 +9185,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--base-mixed-greens",
@@ -9217,7 +9217,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--romaine-lettuce",
@@ -9249,7 +9249,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-red-beets",
@@ -9281,7 +9281,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--shredded-carrots",
@@ -9313,7 +9313,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--shredded-rainbow-carrots",
@@ -9345,7 +9345,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-cucumber",
@@ -9377,7 +9377,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--grape-tomato",
@@ -9409,7 +9409,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-radish",
@@ -9441,7 +9441,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--cooked-quinoa",
@@ -9473,7 +9473,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--paprika-rosemary-tofu",
@@ -9506,7 +9506,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--garlic-cheese-crouton",
@@ -9541,7 +9541,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--dried-cranberry",
@@ -9573,7 +9573,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--raisins",
@@ -9605,7 +9605,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sunflower-seeds",
@@ -9637,7 +9637,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--pumpkin-seeds",
@@ -9669,7 +9669,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-almond",
@@ -9702,7 +9702,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--olive-oil",
@@ -9734,7 +9734,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--balsamic-vinegar",
@@ -9766,7 +9766,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--apple-cider-vinegar",
@@ -9798,7 +9798,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--ranch-dressing",
@@ -9834,7 +9834,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--caesar-dressing",
@@ -9869,7 +9869,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--balsamic-vinaigrette",
@@ -9902,7 +9902,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--1000-island-dressing",
@@ -9936,7 +9936,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--asian-sesame-dressing",
@@ -9973,7 +9973,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--blue-cheese-dressing",
@@ -10008,7 +10008,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--italian-dressing",
@@ -10041,7 +10041,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--poppy-seed-dressing",
@@ -10075,7 +10075,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--blood-orange-vinaigrette",
@@ -10108,7 +10108,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--assorted-mini-filled-croissant",
@@ -10146,7 +10146,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--assorted-mini-muffins",
@@ -10183,7 +10183,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--assorted-mini-donuts",
@@ -10220,7 +10220,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-midnight-cookie",
@@ -10256,7 +10256,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--carrot-cake",
@@ -10294,7 +10294,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--custard-pie",
@@ -10331,7 +10331,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--chive-cream-cheese",
@@ -10365,7 +10365,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--whipped-cream-cheese",
@@ -10399,7 +10399,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-tomato",
@@ -10431,7 +10431,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-red-onion",
@@ -10463,7 +10463,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-butter",
@@ -10496,7 +10496,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--strawberry-jelly",
@@ -10528,7 +10528,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--thai-shrimp-curry",
@@ -10561,7 +10561,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--thai-tofu-curry",
@@ -10594,7 +10594,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--cauliflower-lentil-curry",
@@ -10627,7 +10627,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sauteed-green-beans",
@@ -10659,7 +10659,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--stir-fried-cabbage-and-mushrooms",
@@ -10695,7 +10695,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--jasmine-rice--recipe-7dd671b34e9d",
@@ -10727,7 +10727,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--brown-rice--recipe-b63d6105238d",
@@ -10759,7 +10759,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegetable-eggroll",
@@ -10794,7 +10794,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--poboy-tempura-cauliflower-sandwich",
@@ -10829,7 +10829,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--shrimp-poboy-sandwich",
@@ -10865,7 +10865,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--creole-coleslaw",
@@ -10898,7 +10898,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--rotini-pasta",
@@ -10932,7 +10932,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--pesto-alfredo-sauce",
@@ -10965,7 +10965,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--marinara-sauce",
@@ -10997,7 +10997,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--asparagus",
@@ -11029,7 +11029,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--assorted-dinner-rolls",
@@ -11063,7 +11063,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--halal-ground-beef",
@@ -11095,7 +11095,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--hominy",
@@ -11127,7 +11127,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--roasted-cumin-butternut-squash",
@@ -11159,7 +11159,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--brussels-sprouts--recipe-9fcc3601fd39",
@@ -11191,7 +11191,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--roasted-peppers--recipe-d2c3c2bba333",
@@ -11223,7 +11223,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-wellness-stew--recipe-fb702737715c",
@@ -11255,7 +11255,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--split-pea-soup--recipe-e938bea9dcc0",
@@ -11287,7 +11287,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--lobster-bisque--recipe-dbf2d5d7ab32",
@@ -11326,7 +11326,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--romaine-lettuce--recipe-de0228718211",
@@ -11358,7 +11358,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--baby-spinach",
@@ -11390,7 +11390,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--base-mixed-greens--recipe-b5893868115f",
@@ -11422,7 +11422,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--gold-beets",
@@ -11454,7 +11454,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-red-beets--recipe-d658dec1aa8a",
@@ -11486,7 +11486,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--red-beets",
@@ -11518,7 +11518,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--steamed-beets",
@@ -11550,7 +11550,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--bias-cut-carrots",
@@ -11582,7 +11582,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--shredded-carrots--recipe-6666ab5e41ef",
@@ -11614,7 +11614,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--shredded-rainbow-carrots--recipe-c4f7e2a9678d",
@@ -11646,7 +11646,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--whole-baby-carrots",
@@ -11678,7 +11678,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--matchstick-carrots",
@@ -11710,7 +11710,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--carrot-sticks",
@@ -11742,7 +11742,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-cucumber--recipe-4821d6d120aa",
@@ -11774,7 +11774,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--english-cucumbers",
@@ -11806,7 +11806,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--diced-cucumbers",
@@ -11838,7 +11838,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--red-radishes",
@@ -11870,7 +11870,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sliced-radish--recipe-0f3c79b24792",
@@ -11902,7 +11902,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--cherry-tomatoes",
@@ -11934,7 +11934,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--grape-tomato--recipe-13e61b5a10d4",
@@ -11966,7 +11966,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--heirloom-tomato",
@@ -11998,7 +11998,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--garlic-cheese-crouton--recipe-ee0401575f0b",
@@ -12033,7 +12033,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--dried-cranberry--recipe-7394c3bb9455",
@@ -12065,7 +12065,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--raisins--recipe-ccc8cc71b882",
@@ -12097,7 +12097,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--sunflower-seeds--recipe-922b3b72bd35",
@@ -12129,7 +12129,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--pumpkin-seeds--recipe-4018fa818acc",
@@ -12161,7 +12161,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--olive-oil--recipe-1719091e4d3a",
@@ -12193,7 +12193,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--balsamic-vinegar--recipe-d551eb899ae2",
@@ -12225,7 +12225,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--apple-cider-vinegar--recipe-f87bb71cc4c5",
@@ -12257,7 +12257,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--ranch-dressing--recipe-66082d9eea8d",
@@ -12293,7 +12293,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--caesar-dressing--recipe-7235a67bb5cf",
@@ -12328,7 +12328,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--balsamic-vinaigrette--recipe-b4eb0c15d429",
@@ -12361,7 +12361,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--1000-island-dressing--recipe-5a6e5b0489bb",
@@ -12395,7 +12395,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--asian-sesame-dressing--recipe-fd73986f9fbf",
@@ -12432,7 +12432,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--blue-cheese-dressing--recipe-3cdf1b10c566",
@@ -12467,7 +12467,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--italian-dressing--recipe-d6dc183676ae",
@@ -12500,7 +12500,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--poppy-seed-dressing--recipe-ff2f56b99eab",
@@ -12534,7 +12534,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--blood-orange-vinaigrette--recipe-6a7dc1c05f7c",
@@ -12567,7 +12567,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--paprika-rosemary-tofu--recipe-bbf2866edb28",
@@ -12600,7 +12600,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--tuna-salad",
@@ -12634,7 +12634,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--egg-salad",
@@ -12668,7 +12668,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--custard-pie--recipe-d554b65dd007",
@@ -12705,7 +12705,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--carrot-cake--recipe-2a0fa7999a2e",
@@ -12743,7 +12743,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "crossroads--vegan-midnight-cookie--recipe-a3b2ce3d953b",
@@ -12779,7 +12779,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--romaine-lettuce",
@@ -12811,7 +12811,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--base-mixed-greens",
@@ -12843,7 +12843,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--gold-beets",
@@ -12875,7 +12875,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--shredded-carrots",
@@ -12907,7 +12907,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sliced-cucumber",
@@ -12939,7 +12939,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--cherry-tomatoes",
@@ -12971,7 +12971,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--garlic-cheese-crouton",
@@ -13006,7 +13006,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--olive-oil",
@@ -13038,7 +13038,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--balsamic-vinegar",
@@ -13070,7 +13070,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--caesar-dressing",
@@ -13105,7 +13105,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--ranch-dressing",
@@ -13141,7 +13141,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--blue-cheese-dressing",
@@ -13176,7 +13176,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--1000-island-dressing",
@@ -13210,7 +13210,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-midnight-cookie",
@@ -13246,7 +13246,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--chocolate-chunk-brownies",
@@ -13284,7 +13284,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--oatmeal",
@@ -13316,7 +13316,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--scrambled-eggs",
@@ -13349,7 +13349,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--pork-sausage-link",
@@ -13381,7 +13381,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sun-dried-tomato-basil-frittata",
@@ -13415,7 +13415,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--basmati-rice",
@@ -13447,7 +13447,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--fried-tater-tots",
@@ -13479,7 +13479,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--bell-pepper-brussels-sprout-and-zucchini",
@@ -13511,7 +13511,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--belgian-waffle",
@@ -13548,7 +13548,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--chicken-tenders",
@@ -13581,7 +13581,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-chicken-tenders",
@@ -13615,7 +13615,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sauteed-green-beans",
@@ -13647,7 +13647,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--italian-ragu-ground-lamb",
@@ -13679,7 +13679,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-italian-sausage-with-peppers-and-onions",
@@ -13711,7 +13711,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--savory-polenta",
@@ -13743,7 +13743,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--italian-vegetable-blend",
@@ -13775,7 +13775,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sauteed-mushroom",
@@ -13807,7 +13807,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--nutritional-yeast",
@@ -13839,7 +13839,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--basil",
@@ -13871,7 +13871,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--cherry-pepper",
@@ -13903,7 +13903,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--black-olive",
@@ -13935,7 +13935,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--romaine-lettuce--recipe-2aebe1b9d95b",
@@ -13967,7 +13967,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--base-mixed-greens--recipe-154220674900",
@@ -13999,7 +13999,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--gold-beets--recipe-2bdd87e27639",
@@ -14031,7 +14031,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--shredded-carrots--recipe-888f0bf89cae",
@@ -14063,7 +14063,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sliced-cucumber--recipe-d5367e618874",
@@ -14095,7 +14095,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--cherry-tomatoes--recipe-8573ac7f768f",
@@ -14127,7 +14127,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--garlic-cheese-crouton--recipe-91de46fa169b",
@@ -14162,7 +14162,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--olive-oil--recipe-caa3265f55fc",
@@ -14194,7 +14194,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--balsamic-vinegar--recipe-54f5950b4da6",
@@ -14226,7 +14226,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--caesar-dressing--recipe-f0c46763b6a8",
@@ -14261,7 +14261,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--ranch-dressing--recipe-dbb7416f96cc",
@@ -14297,7 +14297,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--blue-cheese-dressing--recipe-b26170d655df",
@@ -14332,7 +14332,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--1000-island-dressing--recipe-476e0f237e62",
@@ -14366,7 +14366,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-midnight-cookie--recipe-86ed71a3f3bd",
@@ -14402,7 +14402,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--chocolate-chunk-brownies--recipe-e6d0ec610321",
@@ -14440,7 +14440,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--split-pea-soup",
@@ -14472,7 +14472,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--chicken-green-chile-chowder",
@@ -14504,7 +14504,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--halal-huli-huli-grilled-chicken-thigh",
@@ -14538,7 +14538,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-chicken-patty-smothered-in-gravy",
@@ -14573,7 +14573,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sauteed-green-beans--recipe-7fed9f92c701",
@@ -14605,7 +14605,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--steamed-broccoli",
@@ -14637,7 +14637,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--long-grain-rice",
@@ -14669,7 +14669,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--waffle-fries",
@@ -14701,7 +14701,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--american-beef-burger",
@@ -14737,7 +14737,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-beyond-burger",
@@ -14772,7 +14772,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--italian-ragu-ground-lamb--recipe-632cc7e94d9c",
@@ -14804,7 +14804,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--vegan-italian-sausage-with-peppers-and-onions--recipe-ea72fc644ca4",
@@ -14836,7 +14836,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--savory-polenta--recipe-75aeec61af1b",
@@ -14868,7 +14868,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--italian-vegetable-blend--recipe-9aac4922209c",
@@ -14900,7 +14900,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--sauteed-mushroom--recipe-cd0749cf2051",
@@ -14932,7 +14932,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--nutritional-yeast--recipe-4d702153a115",
@@ -14964,7 +14964,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--basil--recipe-54e6b633643b",
@@ -14996,7 +14996,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--cherry-pepper--recipe-1f8500d00b66",
@@ -15028,7 +15028,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     },
     {
       "id": "foothill--black-olive--recipe-af667e8d3199",
@@ -15060,7 +15060,7 @@
         }
       ],
       "nutritionSource": "https://dining.berkeley.edu/menus/",
-      "nutritionRetrievedAt": "2026-11-08T07:14:09.406Z"
+      "nutritionRetrievedAt": "2026-11-08T07:53:37.189Z"
     }
   ],
   "nutritionCoverage": {
