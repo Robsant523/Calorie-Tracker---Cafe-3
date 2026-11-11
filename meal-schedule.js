@@ -1,14 +1,15 @@
 (function(root) {
-  const weekday = ['Breakfast','Lunch','Dinner'];
-  const weekend = ['Brunch','Dinner'];
   function mealsFor(items, snapshotDate) {
-    // Use the menu's serving date so an older snapshot does not get relabeled
-    // according to the visitor's local clock or timezone.
-    const date = items.find(f => f.menuDate)?.menuDate || snapshotDate;
-    const day = /^\d{4}-\d{2}-\d{2}$/.test(date || '') ? new Date(date+'T12:00:00Z').getUTCDay() : NaN;
     const offered = new Set(items.flatMap(f => f.meals || [f.meal]));
-    const brunchService = offered.has('Brunch') && !offered.has('Breakfast') && !offered.has('Lunch');
-    return [...(day === 0 || day === 6 || brunchService ? weekend : weekday)];
+    // Published services take priority over calendar assumptions, including
+    // holidays, shortened hours, and hall-specific closures.
+    return ['Breakfast','Brunch','Lunch','Dinner'].filter(meal=>offered.has(meal));
+  }
+  function defaultShares(meals) {
+    if(meals.join('-')==='Breakfast-Lunch-Dinner')return {Breakfast:30,Lunch:40,Dinner:30};
+    if(!meals.length)return {};
+    const steps=Math.floor(20/meals.length),extra=20%meals.length;
+    return Object.fromEntries(meals.map((meal,index)=>[meal,(steps+(index<extra?1:0))*5]));
   }
   function availableAt(food, meal) {
     return (food.meals || [food.meal]).includes(meal);
@@ -17,7 +18,7 @@
     if (meals.includes('Brunch') && ['Breakfast','Lunch'].includes(choice) && availableAt(food,'Brunch')) return 'Brunch';
     return choice;
   }
-  const api = {mealsFor,availableAt,migrateChoice};
+  const api = {mealsFor,defaultShares,availableAt,migrateChoice};
   if(typeof module!=='undefined' && module.exports)module.exports=api;
   else root.CalFuelSchedule=api;
 })(globalThis);

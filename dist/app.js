@@ -153,10 +153,10 @@ function setupMealSchedule() {
   meals=CalFuelSchedule.mealsFor(hallFoods(),snapshotDate);
   const layout=meals.join('-');
   state.mealSchedules ||= {};
-  const defaults=meals.includes('Brunch')?{Brunch:50,Dinner:50}:{Breakfast:30,Lunch:40,Dinner:30};
+  const defaults=CalFuelSchedule.defaultShares(meals);
   const saved=state.mealSchedules[layout] || {};
   $('schedule').innerHTML=meals.map(meal=>`<label><input type="checkbox" data-meal="${meal}" ${saved[meal]?.enabled===false?'':'checked'}/> ${meal} <input aria-label="${meal} percentage" class="meal-share" data-share="${meal}" type="number" value="${Number.isFinite(saved[meal]?.share)?saved[meal].share:defaults[meal]}" min="0" max="100" step="5"/>%</label>`).join('');
-  $('scheduleNote').textContent=meals.includes('Brunch')?'Brunch replaces breakfast and lunch for this menu. Split your day between brunch and dinner; enabled meals must total 100%.':'Split your day between breakfast, lunch, and dinner; enabled meals must total 100%.';
+  $('scheduleNote').textContent=meals.length?'Published meals for this hall: '+meals.join(', ')+'. Only these meals are included; enabled meals must total 100%.':'No meal services are published for this hall in the current snapshot. Choose another hall or refresh the menu.';
   const currentFilter=$('mealFilter').value;
   $('mealFilter').innerHTML='<option value="all">All meals</option>'+meals.map(m=>`<option>${m}</option>`).join('');
   $('mealFilter').value=meals.includes(currentFilter)?currentFilter:'all';
