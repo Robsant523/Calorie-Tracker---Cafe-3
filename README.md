@@ -53,6 +53,8 @@ Refresh uses the menu page's recipe identifiers and the same `get_recipe_details
 
 ## Refresh the menu
 
+On the public website, **Check for menu updates** loads the latest published snapshot. The app also checks on page load, when you return to the tab, and every five minutes while the page is visible. Automatic checks preserve unfinished portion entries. The menu heading shows the serving date, and a failed check shows a warning while retaining the saved snapshot. These checks download the deployed data; they do not scrape Berkeley or publish changes. The owner still runs the command below to fetch Berkeley's latest menu and publish it to GitHub Pages.
+
 ```bash
 npm run refresh-menu
 ```

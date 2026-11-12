@@ -176,7 +176,9 @@ function renderHall() {
   $('menuTitle').textContent = 'Browse ' + hallName();
   const count = hallFoods().length;
   const date = new Date(menuSnapshot.refreshedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'});
-  $('menuInfo').textContent = hallName() + ' · ' + count + ' dishes · updated ' + date + ' · '+hallFoods().filter(CalFuelPortions.hasNutrition).length+' with Berkeley nutrition';
+  const servingDate=hallFoods().find(f=>f.menuDate)?.menuDate;
+  const servingLabel=servingDate?new Date(servingDate+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'}):'date unavailable';
+  $('menuInfo').textContent = hallName() + ' · menu for '+servingLabel+' · ' + count + ' dishes · updated ' + date + ' · '+hallFoods().filter(CalFuelPortions.hasNutrition).length+' with Berkeley nutrition';
   $('hallStatus').textContent = count
     ? 'Menu and plan choices are limited to ' + hallName() + '. Your daily food log includes all halls.'
     : 'No menu was published for ' + hallName() + ' in this snapshot. Choose another hall or refresh the menu.';
@@ -300,5 +302,58 @@ function generatePlan() {
     $('plan').className='plan empty';$('plan').textContent=error.message;
   }
 }
-async function init(){setupPreview();setupPlanOptions();setupFoodHistory();setupManualEntry();resetDailyLog();renderDashboard();const menu=isPreview?CalFuelPreview.createMenu(previewMode):(window.CALFUEL_MENU||await fetch('data/cafe3-menu.json').then(r=>r.json()));foods=menu.items;setupDiningHalls(menu);$('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;$('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);$('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;$('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;renderTargetForm();renderDashboard();renderFoods();renderSelections();generatePlan()}
+let menuRequestActive=false,lastMenuCheck=0;
+const menuEntryInProgress=()=>document.activeElement?.matches('input,select,textarea')||
+  [...document.querySelectorAll('[data-portion] input')].some(input=>input.value!=='');
+function applyMenu(menu) {
+  foods=menu.items;
+  setupDiningHalls(menu);
+  renderDashboard();renderFoods();renderSelections();generatePlan();
+}
+async function refreshMenuSnapshot({manual=false}={}) {
+  if(isPreview||menuRequestActive)return;
+  // Avoid replacing menu forms while someone is entering a portion.
+  if(!manual&&(Date.now()-lastMenuCheck<60000||menuEntryInProgress()))return;
+  menuRequestActive=true;
+  $('refreshMenu').disabled=true;
+  $('menuRefreshStatus').textContent='Checking the published menu…';
+  try {
+    const result=await CalFuelMenuLoader.load({protocol:location.protocol,fallback:menuSnapshot||window.CALFUEL_MENU});
+    const changed=!menuSnapshot||JSON.stringify(result.menu)!==JSON.stringify(menuSnapshot);
+    if(changed&&!manual&&menuEntryInProgress()){
+      $('menuRefreshStatus').textContent='A newer menu is available. Finish recording your portion, then check for menu updates.';
+      return;
+    }
+    if(changed)applyMenu(result.menu);
+    const date=new Date(result.menu.refreshedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+    $('menuRefreshStatus').textContent=result.fromFallback
+      ? (result.error||'Viewing a local file snapshot. Open the app through npm start to check for updates.')+' Last updated '+date+'.'
+      : (changed?'Menu updated.':'You have the latest published menu.')+' Snapshot updated '+date+'.';
+  } catch(error){$('menuRefreshStatus').textContent=error.message;}
+  finally {
+    lastMenuCheck=Date.now();menuRequestActive=false;$('refreshMenu').disabled=false;
+  }
+}
+function setupMenuUpdates() {
+  $('refreshMenu').hidden=isPreview;
+  if(isPreview)return;
+  $('refreshMenu').onclick=()=>refreshMenuSnapshot({manual:true});
+  window.addEventListener('focus',()=>refreshMenuSnapshot());
+  document.addEventListener('visibilitychange',()=>{
+    if(!document.hidden)refreshMenuSnapshot();
+  });
+  setInterval(()=>{if(!document.hidden)refreshMenuSnapshot();},5*60*1000);
+}
+async function init() {
+  setupPreview();setupPlanOptions();setupFoodHistory();setupManualEntry();resetDailyLog();renderDashboard();
+  $('calorieGoal').value=state.goals.calories;$('proteinGoal').value=state.goals.protein;
+  $('carbGoal').value=state.goals.carbs;$('fatGoal').value=state.goals.fat;
+  document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;
+  document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);
+  $('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;
+  $('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;
+  renderTargetForm();setupMenuUpdates();
+  if(isPreview)applyMenu(CalFuelPreview.createMenu(previewMode));
+  else await refreshMenuSnapshot({manual:true});
+}
 init().catch(e=>$('menuInfo').textContent=`Could not load the menu: ${e.message}`);

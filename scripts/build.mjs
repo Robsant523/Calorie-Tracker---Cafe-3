@@ -7,7 +7,7 @@ import {loadSupabaseConfig} from './supabase-env.mjs';
 const assets=[
   'index.html','style.css','plan.css','targets.css','dining-halls.css',
   'portions.css','menu-preview.css','manual-entry.css','food-history.css',
-  'app.js','targets-interactions.js','portions.js','meal-schedule.js',
+  'app.js','targets-interactions.js','portions.js','meal-schedule.js','menu-loader.js',
   'menu-preview.js','full-day-plan.js','food-history.js','manual-entry.js',
   'data/cafe3-menu.json','data/cafe3-menu.js'
 ];
