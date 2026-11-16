@@ -23,12 +23,44 @@ let meals=[];
 const macroCalories=g=>safe(g.protein)*4+safe(g.carbs)*4+safe(g.fat)*9;
 function recommendedGoals(calories,protein){const fat=Math.round(calories*.275/9),carbs=Math.max(0,Math.round((calories-protein*4-fat*9)/4));return{calories,protein,carbs,fat}}
 const logDay=at=>{const d=new Date(at);d.setHours(d.getHours()-5);return d.toLocaleDateString('en-CA')};
+function syncTrackingDay() {
+  const day=logDay(Date.now());
+  if(state.logDay===day)return;
+  CalFuelHistory.rollover(state,day);persist();renderDashboard();
+}
 function resetDailyLog(){CalFuelHistory.rollover(state,logDay(Date.now()));persist();const now=new Date(),next=new Date(now);next.setHours(5,0,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{resetDailyLog();renderDashboard();$('manualStatus').textContent=''},next-now)}
 const category=f=>{const n=f.name.toLowerCase();if(/cookie|cake|dessert|soft serve|ice cream|pudding|brownie|pie/.test(n))return'dessert';if(/avocado|nut|almond|peanut|cashew|seed|olive|guacamole|tahini|oil|butter/.test(n))return'fat';if(/chicken|beef|salmon|turkey|tuna|tofu|bean|lentil|dal|egg|yogurt|brisket|tempeh/.test(n))return'protein';if(/rice|pasta|noodle|potato|bread|waffle|bagel|roll|oatmeal|fries|samosa|cereal/.test(n))return'carb';return'vegetable'};
 const grams=f=>Number.isFinite(f.servingGrams)&&f.servingGrams>0?f.servingGrams:isPreview?({protein:120,carb:160,fat:45,vegetable:100,dessert:85}[category(f)]||120):null;
 const totals=()=>CalFuelPortions.total(state.log,foods);
 let selectedHistoryDay=null;
 const historyNumber=value=>Number.isFinite(Number(value))?Number(Number(value).toFixed(1)):'—';
+const historyDate=value=>new Date(value+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+function renderWeeklyHistory() {
+  const week=CalFuelHistory.week(state,state.logDay,foods),day=selectedHistoryDay||state.logDay;
+  $('weeklyTitle').textContent=isPreview?'Preview week':'Your past 7 days';
+  $('weeklyRange').textContent=historyDate(week.days[0].day)+' – '+historyDate(state.logDay)+' · includes today';
+  $('weeklyCalories').textContent=historyNumber(week.total.calories);
+  $('weeklyAverage').textContent=historyNumber(week.averageCalories);
+  $('weeklyDaysLogged').textContent=week.daysLogged+' / 7';
+  $('weeklyNotice').textContent=isPreview
+    ? 'Sample entries only. Nothing here changes your real history. Days run from 5 AM to 5 AM on this device.'
+    : 'Includes dining hall portions and manual foods saved on this device. Days run from 5 AM to 5 AM. Only recorded foods count; days without entries count as 0 in the average.';
+  const max=Math.max(1,...week.days.map(row=>row.total.calories));
+  $('weeklyDays').innerHTML=week.days.map(row=>{
+    const date=new Date(row.day+'T12:00:00'),today=row.day===state.logDay;
+    const count=row.entries.length+' '+(row.entries.length===1?'entry':'entries');
+    return '<li><a href="#historyTitle" data-history-day="'+row.day+'"'+(row.day===day?' aria-current="true"':'')+' aria-label="View food history for '+escapeHtml(historyDate(row.day))+': '+historyNumber(row.total.calories)+' calories, '+count+'">'+
+      '<span class="weekly-day-name">'+(today?'Today':escapeHtml(date.toLocaleDateString(undefined,{weekday:'short'})))+'</span>'+
+      '<span class="weekly-day-date">'+escapeHtml(date.toLocaleDateString(undefined,{month:'short',day:'numeric'}))+'</span>'+
+      '<span class="weekly-bar" aria-hidden="true"><span style="height:'+Math.round(row.total.calories/max*100)+'%"></span></span>'+
+      '<strong>'+historyNumber(row.total.calories)+'<small> calories</small></strong><span class="weekly-day-count">'+(row.entries.length?count:'No entries')+'</span></a></li>';
+  }).join('');
+  document.querySelectorAll('[data-history-day]').forEach(link=>link.onclick=()=>{
+    selectedHistoryDay=link.dataset.historyDay===state.logDay?null:link.dataset.historyDay;
+    $('historyStatus').textContent='';renderFoodHistory();
+  });
+  return week;
+}
 function historyRecord(entry) {
   const saved=typeof entry==='string'?{id:entry}:entry;
   const food=foods.find(f=>f.id===saved.id);
@@ -38,10 +70,12 @@ function historyRecord(entry) {
     nutrition:saved.nutrition||food};
 }
 function renderFoodHistory() {
-  const days=CalFuelHistory.days(state);
+  const week=CalFuelHistory.week(state,state.logDay,foods);
+  const days=[...new Set([...CalFuelHistory.days(state),...week.days.map(row=>row.day)])].sort().reverse();
   if(selectedHistoryDay&&!days.includes(selectedHistoryDay))selectedHistoryDay=null;
   const day=selectedHistoryDay||state.logDay;
-  const dateLabel=value=>new Date(value+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+  const dateLabel=historyDate;
+  renderWeeklyHistory();
   $('historyTitle').textContent=isPreview?'Preview food history':'Food history';
   $('historyNotice').textContent=isPreview?'Sample entries only. Preview history resets on reload and never changes your real records.':'Dining hall portions and manual foods, saved on this device. Daily totals reset at 5 AM; past days stay here. New dining hall entries use nutrition published by Berkeley. Older entries keep their saved estimates.';
   $('historyDay').innerHTML=days.map(value=>'<option value="'+escapeHtml(value)+'">'+(value===state.logDay?'Today · ':'')+escapeHtml(dateLabel(value))+'</option>').join('');
@@ -68,6 +102,8 @@ function setupFoodHistory() {
     selectedHistoryDay=$('historyDay').value===state.logDay?null:$('historyDay').value;
     $('historyStatus').textContent='';renderFoodHistory();
   };
+  window.addEventListener('focus',syncTrackingDay);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncTrackingDay();});
 }
 function setupManualEntry() {
   const form=$('manualFoodForm');
