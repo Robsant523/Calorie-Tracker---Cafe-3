@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>CalFuel — Berkeley dining tracker</title><link rel="stylesheet" href="style.css?v=6"/><link rel="stylesheet" href="plan.css?v=2"/><link rel="stylesheet" href="targets.css?v=1"/><link rel="stylesheet" href="dining-halls.css?v=2"/><link rel="stylesheet" href="portions.css?v=3"/><link rel="stylesheet" href="menu-preview.css?v=1"/><link rel="stylesheet" href="manual-entry.css?v=2"/><link rel="stylesheet" href="food-history.css?v=2"/></head><body>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>CalFuel — Berkeley dining tracker</title><link rel="stylesheet" href="style.css?v=6"/><link rel="stylesheet" href="plan.css?v=2"/><link rel="stylesheet" href="targets.css?v=1"/><link rel="stylesheet" href="dining-halls.css?v=3"/><link rel="stylesheet" href="portions.css?v=3"/><link rel="stylesheet" href="menu-preview.css?v=1"/><link rel="stylesheet" href="manual-entry.css?v=2"/><link rel="stylesheet" href="food-history.css?v=2"/></head><body>
 <header><div><p class="eyebrow">UC BERKELEY DINING</p><h1>CalFuel</h1></div><a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">Official menu ↗</a></header>
 <main>
   <section class="menu-preview" id="menuPreview" aria-labelledby="previewTitle" hidden>
@@ -15,6 +15,7 @@
     <label for="hallFilter">Where are you eating?</label>
     <select id="hallFilter"><option value="cafe-3">Café 3</option></select>
     <p id="hallStatus" role="status">Choose a dining hall to see its menu and plan your meals.</p>
+    <a class="browse-menu-link" href="#menuTitle">Search the menu ↓</a>
     <button id="refreshMenu" type="button">Check for menu updates</button>
     <p id="menuRefreshStatus" role="status" aria-live="polite"></p>
   </section>
@@ -77,5 +78,20 @@
     <div id="planSelections" class="plan-selections"></div>
     <div id="plan" class="plan empty">Pick foods and meals below, then create your full-day plan.</div>
   </section>
-  <section class="food-section"><div class="section-heading"><div><p class="eyebrow">MENU SNAPSHOT</p><h2 id="menuTitle">Browse the menu</h2><p class="muted" id="menuInfo"></p></div><div class="filter"><input id="search" placeholder="Search dishes" aria-label="Search dishes"/><select id="mealFilter" aria-label="Filter by meal"><option value="all">All meals</option></select><select id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option><option value="protein">Proteins</option><option value="carb">Carbs</option><option value="fat">Fats</option><option value="vegetable">Vegetables</option><option value="dessert">Desserts</option></select></div></div><div id="foods" class="food-grid"></div></section>
-</main><footer>General macro guidance is a planning starting point, not medical advice. Menu names and per-serving nutrition sourced from UC Berkeley Dining. Calculated portions scale the published serving size. Berkeley notes that recipes, portions, and nutrition can vary; confirm with the dining hall when precision matters.</footer><script src="data/cafe3-menu.js?v=9"></script><script src="portions.js?v=3"></script><script src="meal-schedule.js?v=2"></script><script src="menu-preview.js?v=2"></script><script src="full-day-plan.js?v=2"></script><script src="food-history.js?v=2"></script><script src="manual-entry.js?v=2"></script><script src="menu-loader.js?v=1"></script><script src="app.js?v=23"></script><script src="targets-interactions.js?v=1"></script></body></html>
+  <section class="food-section" aria-labelledby="menuTitle">
+    <div class="section-heading"><div><p class="eyebrow">MENU SNAPSHOT</p><h2 id="menuTitle">Browse the menu</h2><p class="muted" id="menuInfo"></p></div></div>
+    <div class="menu-browser">
+      <label class="menu-search" for="search">Search foods or stations<input id="search" type="search" placeholder="Try chicken, rice, or Center Plate" autocomplete="off"/></label>
+      <div class="menu-filter-row">
+        <label>Meal<select id="mealFilter" aria-label="Meal"><option value="all">All meals</option></select></label>
+        <label>Station<select id="stationFilter" aria-label="Station"><option value="all">All stations</option></select></label>
+        <label>Food category<select id="categoryFilter" aria-label="Food category"><option value="all">All categories</option><option value="protein">Proteins</option><option value="carb">Carbs</option><option value="fat">Fats</option><option value="vegetable">Vegetables</option><option value="dessert">Desserts</option></select></label>
+        <label>Sort foods<select id="foodSort" aria-label="Sort foods"><option value="station">Berkeley station order</option><option value="name">Food name (A–Z)</option></select></label>
+        <button id="clearFoodFilters" type="button">Clear filters</button>
+      </div>
+      <p class="muted">Stations follow Berkeley’s menu sections. Choose a meal to see its stations. Each food is listed once.</p>
+      <p id="foodResults" role="status" aria-live="polite"></p>
+    </div>
+    <div id="foods" class="food-grid"></div>
+  </section>
+</main><footer>General macro guidance is a planning starting point, not medical advice. Menu names and per-serving nutrition sourced from UC Berkeley Dining. Calculated portions scale the published serving size. Berkeley notes that recipes, portions, and nutrition can vary; confirm with the dining hall when precision matters.</footer><script src="data/cafe3-menu.js?v=9"></script><script src="portions.js?v=3"></script><script src="meal-schedule.js?v=2"></script><script src="menu-preview.js?v=2"></script><script src="full-day-plan.js?v=2"></script><script src="food-history.js?v=2"></script><script src="manual-entry.js?v=2"></script><script src="menu-loader.js?v=1"></script><script src="menu-browse.js?v=1"></script><script src="app.js?v=24"></script><script src="targets-interactions.js?v=1"></script></body></html>

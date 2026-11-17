@@ -7,3 +7,20 @@
 .hall-selector #refreshMenu{margin:0;font-size:14px}
 .hall-selector #menuRefreshStatus{flex-basis:100%;font-size:13px}
 .hall-selector #menuRefreshStatus:empty{display:none}
+.browse-menu-link{font-size:14px;white-space:nowrap}
+#menuTitle{scroll-margin-top:24px}
+.menu-browser{margin-bottom:20px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.menu-browser label{display:grid;gap:7px;font-size:13px;font-weight:600;min-width:0}
+.menu-browser input,.menu-browser select{width:100%;min-width:0;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:11px 12px;font:14px 'DM Sans',sans-serif}
+.menu-search input{margin-bottom:18px;font-size:16px;padding:14px}
+.menu-filter-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:end;gap:12px}
+.menu-filter-row button{margin:0;min-height:42px;padding:11px 14px;background:#f0f4e9;border:1px solid var(--line)}
+.menu-filter-row button:disabled{opacity:.55;cursor:default}
+.menu-browser input:focus-visible,.menu-browser select:focus-visible,.menu-browser button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+#foodResults{font-size:14px;font-weight:600;color:var(--green);margin:14px 0 0;line-height:1.5}
+.food-stations{display:block;font-size:12px;font-weight:700;color:var(--green);margin:8px 0;overflow-wrap:anywhere}
+.menu-station-heading{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;margin-top:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.menu-station-heading h3{font:700 24px Fraunces,serif;margin:0;overflow-wrap:anywhere}
+.menu-station-heading span{font-size:12px;color:var(--muted);white-space:nowrap}
+@media(max-width:850px){.menu-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-filter-row button{justify-self:start}}
+@media(max-width:420px){.menu-browser{padding:16px}.menu-filter-row{grid-template-columns:1fr}}

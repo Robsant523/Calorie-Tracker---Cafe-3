@@ -30,6 +30,12 @@ The chosen hall and meal selections are saved on the current device. Meals follo
 
 To track food eaten, choose **grams** or **oz** beside **Portion eaten**, then enter the weight on the menu card. Ounces convert to grams for nutrition calculations; food history retains the unit you entered. The card previews calories and macros for that weight; **Record portion** saves it to the day's consumed totals. The nutrition is scaled from the exact Berkeley serving weight. When Berkeley supplies only a cup or piece count, record published servings instead; the app cannot infer a gram weight from volume or pieces. Recorded portions preserve their calculated nutrition across menu refreshes, and previous one-serving records remain supported.
 
+### Search and dining stations
+
+Use **Search the menu** near the dining hall selector to jump to the food browser. Search by food name or station, then combine **Meal**, **Station**, and **Food category** filters. Search ignores case, accents, and extra spaces. **Berkeley station order** groups dishes under the official sections, such as Center Plate, Griddle/Grill, Soup, and Salad Bar; **Food name (A–Z)** shows an alphabetical list. **Clear filters** restores the full menu for the selected hall.
+
+Station names and order come from Berkeley's menu section headings. A food can be offered at different stations for different meals; station filters use the selected meal's placement. Each food is shown once, with its station labels on the card. Changing halls or meals updates the available stations and clears a station selection when it is no longer offered. Older snapshots and sample previews without station data show **Station unavailable** rather than treating the dining hall name as a station. Future menu refreshes preserve this station metadata automatically. Browsing filters do not change saved portions, food history, or meal-plan selections.
+
 ## Supabase setup (Phase 1)
 
 See [SETUP.md](SETUP.md) for creating your Supabase project, enabling Email auth, configuring redirects, and copying `.env.example` to the ignored `.env` file. Only the project URL and anon/publishable key belong in the browser. `lib/supabase.mjs` provides one lazy shared client for later auth and data modules; Phase 1 does not yet change local storage or add login screens.

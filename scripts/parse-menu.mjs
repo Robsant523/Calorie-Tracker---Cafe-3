@@ -15,23 +15,37 @@ const decode = text => text.replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt|nbsp
 
 export function parseMenu(html) {
   const dishes = new Map(), usedIds = new Set(), stack = [];
-  // Tracking the nested <li> containers prevents a previous hall/meal leaking
-  // into the next one. Recipe names are the first span, not allergen tooltip text.
-  for (const token of html.matchAll(/<li\b([^>]*)>|<\/li\s*>/gi)) {
-    if (token[1] === undefined) { stack.pop(); continue; }
-    const attributes = attrs(token[1]);
+  // Berkeley nests station divs inside hall/meal list items. Keep both scopes so
+  // a station ends with its container and cannot leak into siblings or meals.
+  for (const token of html.matchAll(/<(li|div)\b([^>]*)>|<\/(li|div)\s*>/gi)) {
+    if (token[3]) {
+      const closing=token[3].toLowerCase();
+      const index=stack.findLastIndex(frame=>frame.tag===closing);
+      if(index!==-1)stack.length=index;
+      continue;
+    }
+    const attributes = attrs(token[2]);
     const classes = (attributes.class || '').split(/\s+/);
-    const parent = stack.at(-1) || {};
+    const parent = stack.at(-1)?.context || {};
     const context = {...parent};
     if (classes.includes('location-name')) {
       context.hall = HALLS.find(h => (attributes.class || '').includes(h.sourceKey.replaceAll('_', ' ')));
       context.meal = undefined;
+      context.station = null;
+      context.stationOrder = undefined;
     }
     if (classes.includes('preiod-name')) {
       context.meal = (attributes.class || '').match(/\b(Breakfast|Brunch|Lunch|Dinner)\b/i)?.[1];
       if (context.meal) context.meal = context.meal[0].toUpperCase() + context.meal.slice(1).toLowerCase();
+      context.station = null;
+      context.stationOrder = undefined;
     }
-    stack.push(context);
+    if (classes.includes('cat-name')) {
+      const label=html.slice(token.index+token[0].length).match(/^\s*<span\b[^>]*>([\s\S]*?)<\/span>/i)?.[1];
+      context.station=label?decode(label.replace(/<[^>]*>/g,''))||null:null;
+      context.stationOrder=token.index;
+    }
+    stack.push({tag:token[1].toLowerCase(),context});
     if (!classes.includes('recip') || !context.hall || !context.meal) continue;
     const sourcePath = Buffer.from(attributes['data-location'] || '', 'base64').toString('utf8');
     const file = sourcePath.match(/\/([^/]+)_(\d{8})\.xml$/i);
@@ -44,6 +58,7 @@ export function parseMenu(html) {
     const name = decode(rawName), legacyId = slug(name);
     if (!legacyId) continue;
     const sourceRef={location:attributes['data-location'],recipeId:attributes['data-id']||'',menuId:attributes['data-menuid']||'',meal:context.meal};
+    const assignment={meal:context.meal,station:context.station||null,order:context.stationOrder??token.index};
     // Different recipe/menu IDs can use the same display name and serving size.
     // Merge only the exact recipe source, never a name match or old estimate.
     const identity=JSON.stringify([context.hall.id,sourceRef.location,sourceRef.recipeId,sourceRef.menuId,name]);
@@ -54,6 +69,9 @@ export function parseMenu(html) {
       existing.meals = [...new Set([...existing.meals, context.meal])];
       existing.tags = [...new Set([...existing.tags, ...tags])];
       if(!existing.sourceRefs.some(ref=>ref.meal===context.meal))existing.sourceRefs.push(sourceRef);
+      if(!existing.stationAssignments.some(row=>row.meal===assignment.meal&&row.station===assignment.station))
+        existing.stationAssignments.push(assignment);
+      if(!existing.station&&assignment.station)existing.station=assignment.station;
       continue;
     }
     // Keep the first recipe's legacy ID so saved selections keep working.
@@ -63,7 +81,7 @@ export function parseMenu(html) {
     usedIds.add(id);
     dishes.set(identity, {
       id, name, hallId:context.hall.id, diningHall:context.hall.name,
-      station:context.hall.name, menuDate:date, meal:context.meal, meals:[context.meal],
+      station:assignment.station, stationAssignments:[assignment], menuDate:date, meal:context.meal, meals:[context.meal],
       calories:null,protein:null,carbs:null,fat:null,servingSize:null,servingGrams:null,
       tags:[...new Set(tags)],nutrition:'unavailable',sourceRefs:[sourceRef],
     });

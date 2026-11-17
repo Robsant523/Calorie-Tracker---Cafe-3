@@ -239,10 +239,18 @@ function setupDiningHalls(menu) {
   setupMealSchedule(); renderHall();
 }
 
+function updateStationFilter() {
+  const current=$('stationFilter').value,stations=CalFuelBrowse.stations(hallFoods(),$('mealFilter').value);
+  $('stationFilter').innerHTML='<option value="all">All stations</option>'+stations.map(station=>'<option value="'+escapeHtml(station)+'">'+escapeHtml(station)+'</option>').join('');
+  $('stationFilter').value=stations.includes(current)?current:'all';
+}
 function renderFoods() {
-  const term=$('search').value.toLowerCase(),meal=$('mealFilter').value,filter=$('categoryFilter').value;
-  const visible=hallFoods().filter(f=>(meal==='all'||availableAt(f,meal))&&(filter==='all'||category(f)===filter)&&f.name.toLowerCase().includes(term));
-  $('foods').innerHTML=visible.map(f=>{
+  updateStationFilter();
+  const query=$('search').value,meal=$('mealFilter').value,station=$('stationFilter').value,filter=$('categoryFilter').value,sort=$('foodSort').value;
+  const result=CalFuelBrowse.browse(hallFoods(),{query,meal,station,category:filter,categoryOf:category,sort});
+  $('foodResults').textContent=result.items.length+' '+(result.items.length===1?'food':'foods')+' shown in '+hallName()+(meal==='all'?'':' · '+meal)+(station==='all'?'':' · '+station)+(query.trim()?' · Search: '+query.trim():'');
+  $('clearFoodFilters').disabled=!query&&meal==='all'&&station==='all'&&filter==='all'&&sort==='station';
+  const card=f=>{
     const chosen=state.planFoods[f.id]||'',known=CalFuelPortions.hasNutrition(f),weight=grams(f);
     const canPlan=known&&weight>0;
     const numbers=known?`${f.calories} calories · P ${f.protein}g · C ${f.carbs}g · F ${f.fat}g`:'Nutrition unavailable from Berkeley';
@@ -254,8 +262,10 @@ function renderFoods() {
       <button type="submit">Record portion</button></div>
       <p class="portion-feedback" role="status" aria-live="polite">${weight?'Enter the weight you ate to scale the nutrition.':'No gram weight was published. Record a count of the serving shown above.'}</p>
     </form>`:'<p class="portion-feedback">This food is excluded from automatic plans and portion totals until published nutrition is available.</p>';
+    const stationLabels=[...new Set(CalFuelBrowse.placements(f,meal).map(row=>row.station))].join(' / ');
     return `<article class="food-card" data-hall="${escapeHtml(f.hallId)}">
       <span class="station">${escapeHtml(f.diningHall)} · ${escapeHtml(f.meals.join(' / '))} · <b>${category(f)}</b></span>
+      <span class="food-stations">${escapeHtml(stationLabels)}</span>
       <h3>${escapeHtml(f.name)}</h3><p class="numbers">${numbers}</p>
       <p class="muted">${escapeHtml(serving)}</p>
       <div class="food-actions"><div class="plan-picker">
@@ -265,7 +275,10 @@ function renderFoods() {
         </select>
       </div></div>${portion}
     </article>`;
-  }).join('')||'<p class="menu-empty" role="status">No dishes match this hall and these filters. Try another meal, category, or dining hall.</p>';
+  };
+  $('foods').innerHTML=result.items.length
+    ? sort==='name'?result.items.map(card).join(''):result.groups.map(group=>'<div class="menu-station-heading"><h3>'+escapeHtml(group.station)+'</h3><span>'+group.items.length+' '+(group.items.length===1?'food':'foods')+'</span></div>'+group.items.map(card).join('')).join('')
+    : '<p class="menu-empty">No foods match your search and filters. Try another word, meal, or station, or choose Clear filters.</p>';
   document.querySelectorAll('[data-portion]').forEach(form=>{
     const food=foods.find(f=>f.id===form.dataset.portion),input=form.elements.weight,feedback=form.querySelector('.portion-feedback');
     const reference=grams(food),unit=form.elements.namedItem('unit');
@@ -387,7 +400,12 @@ async function init() {
   document.querySelector(`input[name="targetMode"][value="${state.targetMode}"]`).checked=true;
   document.querySelectorAll('#calorieGoal,#proteinGoal,#carbGoal,#fatGoal').forEach(input=>input.oninput=renderTargetForm);
   $('saveGoals').onclick=saveGoals;$('generatePlan').onclick=generatePlan;
-  $('search').oninput=renderFoods;$('mealFilter').onchange=renderFoods;$('categoryFilter').onchange=renderFoods;
+  $('search').oninput=renderFoods;
+  ['mealFilter','stationFilter','categoryFilter','foodSort'].forEach(id=>$(id).onchange=renderFoods);
+  $('clearFoodFilters').onclick=()=>{
+    $('search').value='';['mealFilter','stationFilter','categoryFilter'].forEach(id=>$(id).value='all');
+    $('foodSort').value='station';renderFoods();$('search').focus();
+  };
   renderTargetForm();setupMenuUpdates();
   if(isPreview)applyMenu(CalFuelPreview.createMenu(previewMode));
   else await refreshMenuSnapshot({manual:true});
